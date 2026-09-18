@@ -8,39 +8,39 @@ use yii\bootstrap5\Html;
 use yii\helpers\Url;
 use app\models\Booking;
 
-$this->title = 'My Bookings | EneoLink';
+$this->title = 'Miadi Yangu | MachoMtaa';
 ?>
 
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
         <div>
-            <h2 class="fw-bold mb-1"><i class="bi bi-calendar-range-fill text-primary me-2"></i>My Bookings (Miadi Yangu)</h2>
-            <p class="text-muted mb-0">Manage all your site visit inspections and property reservations.</p>
+            <h2 class="fw-bold mb-1"><i class="bi bi-calendar-range-fill text-primary me-2"></i>Miadi Yangu (Uhifadhi)</h2>
+            <p class="text-muted mb-0">Simamia maombi yako yote ya kutembelea na kukagua fremu pamoja na nafasi ulizoomba.</p>
         </div>
         <a href="<?= Url::to(['/property/index']) ?>" class="btn btn-outline-primary fw-bold">
-            <i class="bi bi-search me-1"></i> Tafuta Maeneo Mengine
+            <i class="bi bi-search me-1"></i> Tafuta Fremu Nyingine
         </a>
     </div>
 
     <!-- Status Filters -->
     <div class="mb-4 d-flex gap-2 flex-wrap">
         <a href="<?= Url::to(['index']) ?>" class="btn btn-sm <?= empty($currentStatus) ? 'btn-dark' : 'btn-outline-dark' ?>">
-            Zote (All)
+            Zote
         </a>
         <a href="<?= Url::to(['index', 'status' => Booking::STATUS_PENDING]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_PENDING ? 'btn-warning' : 'btn-outline-warning' ?>">
-            Inasubiri (Pending)
+            Inasubiri
         </a>
         <a href="<?= Url::to(['index', 'status' => Booking::STATUS_CONFIRMED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_CONFIRMED ? 'btn-success' : 'btn-outline-success' ?>">
-            Zilizothibitishwa (Confirmed)
+            Zilizothibitishwa
         </a>
         <a href="<?= Url::to(['index', 'status' => Booking::STATUS_RESCHEDULED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_RESCHEDULED ? 'btn-info' : 'btn-outline-info' ?>">
-            Zilizobadilishwa Tarehe (Rescheduled)
+            Zilizobadilishwa Tarehe
         </a>
         <a href="<?= Url::to(['index', 'status' => Booking::STATUS_COMPLETED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_COMPLETED ? 'btn-primary' : 'btn-outline-primary' ?>">
-            Zilizokamilika (Completed)
+            Zilizokamilika
         </a>
         <a href="<?= Url::to(['index', 'status' => Booking::STATUS_CANCELLED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_CANCELLED ? 'btn-secondary' : 'btn-outline-secondary' ?>">
-            Zilizoghirishwa (Cancelled)
+            Zilizoghairishwa
         </a>
     </div>
 
@@ -49,11 +49,11 @@ $this->title = 'My Bookings | EneoLink';
             <div class="mb-3 text-muted">
                 <i class="bi bi-calendar-x display-1"></i>
             </div>
-            <h4 class="fw-bold text-dark">Hujaweka booking yoyote kwa sasa</h4>
-            <p class="text-muted">Browse properties and click "Book Site Visit / Reserve" on any property detail page.</p>
+            <h4 class="fw-bold text-dark">Hujaweka ombi la miadi au uhifadhi kwa sasa</h4>
+            <p class="text-muted">Tafuta fremu ya biashara kisha bonyeza "Kukagua Eneo / Weka Oda" kwenye ukurasa wa fremu husika.</p>
             <div>
                 <a href="<?= Url::to(['/property/index']) ?>" class="btn btn-primary fw-bold px-4">
-                    Tafuta Maeneo Sasa
+                    Tafuta Fremu Sasa
                 </a>
             </div>
         </div>
@@ -154,7 +154,13 @@ $this->title = 'My Bookings | EneoLink';
                                     <i class="bi bi-lock-fill me-1"></i> Mkataba Unapatikana Baada ya Kuthibitishwa
                                 </span>
                             <?php endif; ?>
-                            <div class="d-flex gap-2">
+                            <div class="d-flex gap-2 flex-wrap">
+                                <?php if ($booking->status === Booking::STATUS_CONFIRMED): ?>
+                                    <a href="<?= Url::to(['/payment/view', 'booking_id' => $booking->id]) ?>" class="btn btn-sm btn-success fw-bold">
+                                        <i class="bi bi-cash-coin me-1"></i> Malipo / Lipa
+                                    </a>
+                                <?php endif; ?>
+
                                 <?php if ($booking->status === Booking::STATUS_CONFIRMED): ?>
                                     <?= Html::beginForm(['/booking/complete', 'id' => $booking->id], 'post') ?>
                                     <button class="btn btn-sm btn-outline-success fw-bold">

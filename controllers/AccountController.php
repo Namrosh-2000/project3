@@ -22,6 +22,12 @@ class AccountController extends Controller
                     ['allow' => true, 'roles' => ['@']],
                 ],
             ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'reply-inquiry' => ['post'],
+                ],
+            ],
         ];
     }
 
@@ -73,15 +79,21 @@ class AccountController extends Controller
     {
         $inquiry = Inquiry::findOne(['id' => $id, 'owner_id' => Yii::$app->user->id]);
         if ($inquiry === null) {
-            throw new NotFoundHttpException('Inquiry haikupatikana.');
+            throw new NotFoundHttpException('Ujumbe haukupatikana au huna ruhusa.');
         }
 
-        if (Yii::$app->request->isPost) {
-            $inquiry->reply = Yii::$app->request->post('reply');
-            $inquiry->status = Inquiry::STATUS_REPLIED;
-            if ($inquiry->save(false)) {
-                Yii::$app->session->setFlash('success', 'Jibu lako limetumwa.');
-            }
+        $reply = trim((string)Yii::$app->request->post('reply'));
+        if (empty($reply)) {
+            Yii::$app->session->setFlash('error', 'Tafadhali andika jibu kabla ya kutuma.');
+            return $this->redirect(['inquiries']);
+        }
+
+        $inquiry->reply = $reply;
+        $inquiry->status = Inquiry::STATUS_REPLIED;
+        if ($inquiry->save(false)) {
+            Yii::$app->session->setFlash('success', 'Jibu lako limetumwa kikamilifu kwa mteja.');
+        } else {
+            Yii::$app->session->setFlash('error', 'Imeshindikana kutuma jibu. Jaribu tena.');
         }
 
         return $this->redirect(['inquiries']);

@@ -117,12 +117,22 @@ class BookingController extends Controller
             return $this->redirect(['/property/view', 'id' => $property->id]);
         }
 
+        if (!$property->is_available) {
+            Yii::$app->session->setFlash('error', 'Eneo hili kwa sasa halipatikani tena kwa ajili ya booking au ukaguzi.');
+            return $this->redirect(['/property/view', 'id' => $property->id]);
+        }
+
         $model = new Booking();
         $model->property_id = $property->id;
         $model->seeker_id = Yii::$app->user->id;
         $model->owner_id = $property->owner_id;
 
         if ($model->load(Yii::$app->request->post())) {
+            if (!empty($model->booking_date) && strtotime($model->booking_date) < strtotime('today')) {
+                Yii::$app->session->setFlash('error', 'Tarehe ya miadi haiwezi kuwa ya siku zilizopita.');
+                return $this->redirect(['/property/view', 'id' => $property->id]);
+            }
+
             if (!empty($model->offered_price) && (float)$model->offered_price > 0) {
                 $model->bargain_status = Booking::BARGAIN_STATUS_PENDING;
             } else {
@@ -131,7 +141,7 @@ class BookingController extends Controller
             }
 
             if ($model->save()) {
-                Yii::$app->session->setFlash('success', 'Ombi lako la booking na offa limetumwa kikamilifu!');
+                Yii::$app->session->setFlash('success', 'Ombi lako la booking na miadi limetumwa kikamilifu!');
                 return $this->redirect(['index']);
             } else {
                 Yii::$app->session->setFlash('error', 'Tafadhali jaza taarifa zote zinazohitajika za booking.');
@@ -147,6 +157,12 @@ class BookingController extends Controller
     public function actionConfirm($id)
     {
         $booking = $this->findOwnerBooking($id);
+
+        if (!in_array($booking->status, [Booking::STATUS_PENDING, Booking::STATUS_RESCHEDULED], true)) {
+            Yii::$app->session->setFlash('warning', 'Booking hii haiwezi kuthibitishwa katika hali yake ya sasa.');
+            return $this->redirect(Yii::$app->request->referrer ?: ['owner']);
+        }
+
         $booking->status = Booking::STATUS_CONFIRMED;
 
         $acceptBargain = Yii::$app->request->post('accept_bargain');
@@ -182,12 +198,23 @@ class BookingController extends Controller
     public function actionReschedule($id)
     {
         $booking = $this->findOwnerBooking($id);
+
+        if (!in_array($booking->status, [Booking::STATUS_PENDING, Booking::STATUS_RESCHEDULED], true)) {
+            Yii::$app->session->setFlash('warning', 'Booking hii haiwezi kubadilishwa tarehe katika hali yake ya sasa.');
+            return $this->redirect(Yii::$app->request->referrer ?: ['owner']);
+        }
+
         $proposedDate = Yii::$app->request->post('proposed_date');
         $proposedTime = Yii::$app->request->post('proposed_time');
         $notes = Yii::$app->request->post('owner_response_notes');
 
         if (empty($proposedDate) || empty($proposedTime)) {
             Yii::$app->session->setFlash('error', 'Tafadhali chagua tarehe na muda mpya wa kupendekeza.');
+            return $this->redirect(Yii::$app->request->referrer ?: ['owner']);
+        }
+
+        if (strtotime($proposedDate) < strtotime('today')) {
+            Yii::$app->session->setFlash('error', 'Tarehe mpya ya miadi haiwezi kuwa ya siku zilizopita.');
             return $this->redirect(Yii::$app->request->referrer ?: ['owner']);
         }
 
@@ -212,7 +239,12 @@ class BookingController extends Controller
     {
         $booking = Booking::findOne(['id' => $id, 'seeker_id' => Yii::$app->user->id]);
         if (!$booking) {
-            throw new NotFoundHttpException('Booking haikupatikana.');
+            throw new NotFoundHttpException('Booking haikupatikana au huna ruhusa.');
+        }
+
+        if ($booking->status !== Booking::STATUS_RESCHEDULED) {
+            Yii::$app->session->setFlash('warning', 'Booking hii haina tarehe mpya inayongoja kukubaliwa.');
+            return $this->redirect(['index']);
         }
 
         if (!empty($booking->proposed_date)) {
@@ -223,8 +255,10 @@ class BookingController extends Controller
             $booking->status = Booking::STATUS_CONFIRMED;
 
             if ($booking->save(false)) {
-                Yii::$app->session->setFlash('success', 'Umekubali tarehe mpya iliyopendekezwa! Miadi imethibitishwa.');
+                Yii::$app->session->setFlash('success', 'Umekubali tarehe mpya iliyopendekezwa! Miadi imethibitishwa kikamilifu.');
             }
+        } else {
+            Yii::$app->session->setFlash('error', 'Taarifa za tarehe iliyopendekezwa hazikupatikana.');
         }
 
         return $this->redirect(['index']);
@@ -236,6 +270,12 @@ class BookingController extends Controller
     public function actionReject($id)
     {
         $booking = $this->findOwnerBooking($id);
+
+        if (!in_array($booking->status, [Booking::STATUS_PENDING, Booking::STATUS_RESCHEDULED], true)) {
+            Yii::$app->session->setFlash('warning', 'Booking hii haiwezi kukataliwa katika hali yake ya sasa.');
+            return $this->redirect(Yii::$app->request->referrer ?: ['owner']);
+        }
+
         $booking->status = Booking::STATUS_REJECTED;
         $notes = Yii::$app->request->post('owner_response_notes');
         if (!empty($notes)) {
@@ -264,6 +304,11 @@ class BookingController extends Controller
             throw new NotFoundHttpException('Booking haikupatikana.');
         }
 
+        if (in_array($booking->status, [Booking::STATUS_COMPLETED, Booking::STATUS_REJECTED, Booking::STATUS_CANCELLED], true)) {
+            Yii::$app->session->setFlash('warning', 'Booking hii haiwezi kuahirishwa katika hali yake ya sasa.');
+            return $this->redirect(Yii::$app->request->referrer ?: ['index']);
+        }
+
         $booking->status = Booking::STATUS_CANCELLED;
         if ($booking->save(false)) {
             Yii::$app->session->setFlash('warning', 'Booking (' . $booking->booking_code . ') imeghirishwa.');
@@ -287,6 +332,11 @@ class BookingController extends Controller
             throw new NotFoundHttpException('Booking haikupatikana.');
         }
 
+        if ($booking->status !== Booking::STATUS_CONFIRMED) {
+            Yii::$app->session->setFlash('warning', 'Ni booking zilizothibitishwa tu zinazoweza kuwekwa kama Zimekamilika.');
+            return $this->redirect(Yii::$app->request->referrer ?: ['index']);
+        }
+
         $booking->status = Booking::STATUS_COMPLETED;
         if ($booking->save(false)) {
             $property = Property::findOne($booking->property_id);
@@ -294,7 +344,7 @@ class BookingController extends Controller
                 $property->is_available = false;
                 $property->save(false);
             }
-            Yii::$app->session->setFlash('success', 'Booking (' . $booking->booking_code . ') imewekwa kama Imehakikishwa na Kukamilika! Eneo limewekwa kama Imeshakodishwa / Kuuzwa.');
+            Yii::$app->session->setFlash('success', 'Booking (' . $booking->booking_code . ') imewekwa kama Imekamilika! Eneo limewekwa kama Imeshakodishwa / Kuuzwa.');
         }
 
         return $this->redirect(Yii::$app->request->referrer ?: ['index']);

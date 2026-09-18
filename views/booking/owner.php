@@ -9,39 +9,39 @@ use yii\bootstrap5\Modal;
 use yii\helpers\Url;
 use app\models\Booking;
 
-$this->title = 'Manage Received Bookings | EneoLink';
+$this->title = 'Maombi ya Miadi na Uhifadhi | MachoMtaa';
 ?>
 
 <div class="container py-4">
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
         <div>
-            <h2 class="fw-bold mb-1"><i class="bi bi-inbox-fill text-primary me-2"></i>Received Bookings (Maombi ya Miadi)</h2>
-            <p class="text-muted mb-0">Review, confirm, reschedule, or manage booking requests from property seekers.</p>
+            <h2 class="fw-bold mb-1"><i class="bi bi-inbox-fill text-primary me-2"></i>Maombi ya Miadi na Uhifadhi</h2>
+            <p class="text-muted mb-0">Kagua, thibitisha, badilisha tarehe, au simamia maombi ya kukagua fremu kutoka kwa wajasiriamali.</p>
         </div>
         <a href="<?= Url::to(['/account/listings']) ?>" class="btn btn-outline-secondary fw-bold">
-            <i class="bi bi-building me-1"></i> Maeneo Yangu (My Listings)
+            <i class="bi bi-building me-1"></i> Fremu Zangu
         </a>
     </div>
 
     <!-- Status Filters -->
     <div class="mb-4 d-flex gap-2 flex-wrap">
         <a href="<?= Url::to(['owner']) ?>" class="btn btn-sm <?= empty($currentStatus) ? 'btn-dark' : 'btn-outline-dark' ?>">
-            Zote (All)
+            Zote
         </a>
         <a href="<?= Url::to(['owner', 'status' => Booking::STATUS_PENDING]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_PENDING ? 'btn-warning' : 'btn-outline-warning' ?>">
-            Inasubiri (Pending)
+            Inasubiri
         </a>
         <a href="<?= Url::to(['owner', 'status' => Booking::STATUS_CONFIRMED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_CONFIRMED ? 'btn-success' : 'btn-outline-success' ?>">
-            Zilizothibitishwa (Confirmed)
+            Zilizothibitishwa
         </a>
         <a href="<?= Url::to(['owner', 'status' => Booking::STATUS_RESCHEDULED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_RESCHEDULED ? 'btn-info' : 'btn-outline-info' ?>">
-            Zilizobadilishwa Tarehe (Rescheduled)
+            Zilizobadilishwa Tarehe
         </a>
         <a href="<?= Url::to(['owner', 'status' => Booking::STATUS_COMPLETED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_COMPLETED ? 'btn-primary' : 'btn-outline-primary' ?>">
-            Zilizokamilika (Completed)
+            Zilizokamilika
         </a>
         <a href="<?= Url::to(['owner', 'status' => Booking::STATUS_CANCELLED]) ?>" class="btn btn-sm <?= $currentStatus === Booking::STATUS_CANCELLED ? 'btn-secondary' : 'btn-outline-secondary' ?>">
-            Zilizoghirishwa (Cancelled)
+            Zilizoghairishwa
         </a>
     </div>
 
@@ -50,8 +50,8 @@ $this->title = 'Manage Received Bookings | EneoLink';
             <div class="mb-3 text-muted">
                 <i class="bi bi-inbox display-1"></i>
             </div>
-            <h4 class="fw-bold text-dark">Hujapokea maombi yoyote ya booking kwa sasa</h4>
-            <p class="text-muted">When seekers request site visits or reservations on your properties, they will appear here.</p>
+            <h4 class="fw-bold text-dark">Hujapokea maombi yoyote ya miadi kwa sasa</h4>
+            <p class="text-muted">Wajasiriamali wanapoandika maombi ya kutembelea au kuhifadhi fremu zako, yataonekana hapa.</p>
         </div>
     <?php else: ?>
         <div class="row g-4">
@@ -155,13 +155,18 @@ $this->title = 'Manage Received Bookings | EneoLink';
                                     </button>
                                 </div>
                             <?php elseif ($booking->status === Booking::STATUS_CONFIRMED): ?>
-                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
                                     <small class="text-success fw-bold"><i class="bi bi-check-all me-1"></i> Miadi imethibitishwa</small>
-                                    <?= Html::beginForm(['/booking/complete', 'id' => $booking->id], 'post') ?>
-                                    <button class="btn btn-sm btn-primary fw-bold">
-                                        <i class="bi bi-flag-fill me-1"></i> Weka Kama Imehakikishwa na Kukamilika
-                                    </button>
-                                    <?= Html::endForm() ?>
+                                    <div class="d-flex gap-2 flex-wrap">
+                                        <a href="<?= Url::to(['/payment/view', 'booking_id' => $booking->id]) ?>" class="btn btn-sm btn-outline-success fw-bold">
+                                            <i class="bi bi-cash-coin me-1"></i> Angalia / Thibitisha Malipo
+                                        </a>
+                                        <?= Html::beginForm(['/booking/complete', 'id' => $booking->id], 'post') ?>
+                                        <button class="btn btn-sm btn-primary fw-bold">
+                                            <i class="bi bi-flag-fill me-1"></i> Weka Kama Imehakikishwa na Kukamilika
+                                        </button>
+                                        <?= Html::endForm() ?>
+                                    </div>
                                 </div>
                             <?php else: ?>
                                 <small class="text-muted">Hali: <?= Html::encode($booking->getStatusLabel()) ?></small>

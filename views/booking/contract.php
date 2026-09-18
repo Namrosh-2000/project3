@@ -7,11 +7,14 @@
 use yii\bootstrap5\Html;
 use yii\helpers\Url;
 use app\models\BookingContract;
+use app\models\Payment;
 
 $this->title = 'Mkataba wa Pango (Contract) - Code: ' . $contract->contract_code;
 
 $isSeeker = (Yii::$app->user->id === $booking->seeker_id);
-$isOwner = (Yii::$app->user->id === $booking->owner_id);
+$isOwner  = (Yii::$app->user->id === $booking->owner_id);
+
+$activePayment = Payment::findActive((int)$booking->id);
 ?>
 
 <div class="container py-4">
@@ -28,14 +31,42 @@ $isOwner = (Yii::$app->user->id === $booking->owner_id);
         </div>
     </div>
 
+    <?php /* Payment status banner – Phase 7F */ ?>
+    <?php if ($activePayment): ?>
+        <div class="alert alert-<?= $activePayment->status === 'paid' ? 'success' : ($activePayment->status === 'failed' ? 'danger' : 'warning') ?> d-flex align-items-center gap-3 mb-4 d-print-none">
+            <i class="bi bi-<?= $activePayment->status === 'paid' ? 'check-circle-fill' : ($activePayment->status === 'failed' ? 'x-circle-fill' : 'hourglass-split') ?> fs-4"></i>
+            <div>
+                <strong>Hali ya Malipo:</strong> <?= Html::encode($activePayment->getStatusLabel()) ?>
+                · <span class="badge <?= $activePayment->getStatusBadgeClass() ?>"><?= Html::encode($activePayment->payment_code) ?></span>
+                · <?= Html::encode($activePayment->getFormattedAmount()) ?>
+                <?php if ($activePayment->status === 'paid' && $activePayment->paid_at): ?>
+                    · Imethibitishwa: <?= date('d M Y', $activePayment->paid_at) ?>
+                <?php endif; ?>
+                <a href="<?= Url::to(['/payment/view', 'booking_id' => $booking->id]) ?>" class="ms-2 btn btn-sm btn-outline-dark fw-bold d-print-none">
+                    <i class="bi bi-cash-coin me-1"></i> Angalia Malipo
+                </a>
+            </div>
+        </div>
+    <?php elseif ($booking->status === \app\models\Booking::STATUS_CONFIRMED && $isSeeker): ?>
+        <div class="alert alert-info d-flex align-items-center gap-3 mb-4 d-print-none">
+            <i class="bi bi-cash-coin fs-4"></i>
+            <div>
+                Booking imethibitishwa. Bado haujafanya malipo.
+                <a href="<?= Url::to(['/payment/view', 'booking_id' => $booking->id]) ?>" class="ms-2 btn btn-sm btn-success fw-bold">
+                    <i class="bi bi-cash-coin me-1"></i> Lipa Sasa
+                </a>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <!-- Official Contract Document Card -->
     <div class="card shadow-lg border-2 border-dark rounded-3 overflow-hidden bg-white p-4 p-md-5">
         <!-- Header & Stamp -->
         <div class="border-bottom border-3 border-dark pb-4 mb-4 text-center position-relative">
             <div class="d-flex justify-content-between align-items-start mb-3">
                 <div class="text-start">
-                    <h2 class="fw-bold text-dark mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i> EneoLink</h2>
-                    <small class="text-muted uppercase fw-bold">Verified Real Estate Platform - Kinondoni</small>
+                    <h2 class="fw-bold text-dark mb-0"><i class="bi bi-geo-alt-fill text-danger me-1"></i> MachoMtaa</h2>
+                    <small class="text-muted uppercase fw-bold">Jukwaa Rasmi la Fursa na Fremu za Biashara</small>
                 </div>
                 <div class="text-end">
                     <span class="badge bg-dark font-monospace fs-6">Code: <?= Html::encode($contract->contract_code) ?></span>
@@ -62,13 +93,13 @@ $isOwner = (Yii::$app->user->id === $booking->owner_id);
                 <div class="col-md-6 border-end">
                     <div class="fw-bold text-primary mb-1 uppercase">UPANDE A: MMILIKI / DALALI (LANDLORD / AGENT)</div>
                     <div class="fs-6"><strong>Jina:</strong> <?= Html::encode($booking->owner->username ?? 'N/A') ?></div>
-                    <div class="small text-muted mb-1"><strong>Mawasiliano:</strong> <span class="badge bg-secondary-subtle text-dark border"><i class="bi bi-shield-lock-fill text-primary me-1"></i> EneoLink In-App Protected</span></div>
-                    <div class="small text-muted"><strong>Role:</strong> <?= ucfirst(Html::encode($booking->owner->role ?? 'owner')) ?></div>
+                    <div class="small text-muted mb-1"><strong>Mawasiliano:</strong> <span class="badge bg-secondary-subtle text-dark border"><i class="bi bi-shield-lock-fill text-primary me-1"></i> MachoMtaa In-App Protected</span></div>
+                    <div class="small text-muted"><strong>Wadhifa:</strong> <?= ucfirst(Html::encode($booking->owner->role ?? 'owner')) ?></div>
                 </div>
                 <div class="col-md-6">
                     <div class="fw-bold text-success mb-1 uppercase">UPANDE B: MPANGAJI / MTEJA (TENANT / BUYER)</div>
                     <div class="fs-6"><strong>Jina:</strong> <?= Html::encode($booking->seeker->username ?? 'N/A') ?></div>
-                    <div class="small text-muted mb-1"><strong>Mawasiliano:</strong> <span class="badge bg-secondary-subtle text-dark border"><i class="bi bi-shield-lock-fill text-success me-1"></i> EneoLink In-App Protected</span></div>
+                    <div class="small text-muted mb-1"><strong>Mawasiliano:</strong> <span class="badge bg-secondary-subtle text-dark border"><i class="bi bi-shield-lock-fill text-success me-1"></i> MachoMtaa In-App Protected</span></div>
                     <div class="small text-muted"><strong>Tarehe ya Miadi:</strong> <?= date('d M Y', strtotime($booking->booking_date)) ?> @ <?= Html::encode($booking->booking_time) ?></div>
                 </div>
             </div>
@@ -119,7 +150,7 @@ $isOwner = (Yii::$app->user->id === $booking->owner_id);
                 <?= Html::encode($contract->contract_terms) ?>
             </div>
             <div class="small text-muted">
-                <em>* Mkataba huu umezalishwa rasmi na mfumo wa EneoLink kulingana na masharti yaliyowekwa na Mmiliki na kuthibitishwa na Mpangaji.</em>
+                <em>* Mkataba huu umezalishwa rasmi na mfumo wa MachoMtaa kulingana na masharti yaliyowekwa na Mmiliki na kuthibitishwa na Mpangaji.</em>
             </div>
         </div>
 

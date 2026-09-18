@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use app\models\Payment;
 
 /**
  * Booking model representing site visit or property reservation requests.
@@ -121,6 +122,17 @@ class Booking extends ActiveRecord
     public function getOwner()
     {
         return $this->hasOne(User::class, ['id' => 'owner_id']);
+    }
+
+    public function getPayments()
+    {
+        return $this->hasMany(Payment::class, ['booking_id' => 'id']);
+    }
+
+    public function getActivePayment()
+    {
+        return $this->hasOne(Payment::class, ['booking_id' => 'id'])
+            ->andWhere(['not', ['status' => Payment::STATUS_CANCELLED]]);
     }
 
     public function getEffectivePrice()

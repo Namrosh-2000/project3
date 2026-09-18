@@ -22,10 +22,10 @@ class PropertyController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['toggle-favorite', 'report', 'compare'],
+                'only' => ['toggle-favorite', 'report', 'compare', 'contact'],
                 'rules' => [
                     [
-                        'actions' => ['toggle-favorite', 'report'],
+                        'actions' => ['toggle-favorite', 'report', 'contact'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -39,6 +39,7 @@ class PropertyController extends Controller
                 'class' => VerbFilter::class,
                 'actions' => [
                     'toggle-favorite' => ['post'],
+                    'contact' => ['post'],
                 ],
             ],
         ];
@@ -122,6 +123,28 @@ class PropertyController extends Controller
         }
 
         Yii::$app->session->setFlash('error', 'Tafadhali jaza sababu ya taarifa.');
+        return $this->redirect(['view', 'id' => $property->id]);
+    }
+
+    public function actionContact($id)
+    {
+        $property = $this->findModel($id);
+        if ($property->owner_id === Yii::$app->user->id) {
+            Yii::$app->session->setFlash('error', 'Huwezi kutuma ujumbe au swali kwenye eneo lako mwenyewe.');
+            return $this->redirect(['view', 'id' => $property->id]);
+        }
+
+        $inquiry = new Inquiry();
+        $inquiry->property_id = $property->id;
+        $inquiry->seeker_id = Yii::$app->user->id;
+        $inquiry->owner_id = $property->owner_id;
+
+        if ($inquiry->load(Yii::$app->request->post()) && $inquiry->save()) {
+            Yii::$app->session->setFlash('success', 'Ujumbe wako umetumwa kikamilifu kwa mmiliki wa eneo hili.');
+        } else {
+            Yii::$app->session->setFlash('error', 'Tafadhali jaza ujumbe unaotaka kutuma.');
+        }
+
         return $this->redirect(['view', 'id' => $property->id]);
     }
 

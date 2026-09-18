@@ -133,9 +133,17 @@ $features = [
                         <button class="btn btn-success btn-lg fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#bookingModal">
                             <i class="bi bi-calendar-check-fill me-2"></i> Book Site Visit / Reserve
                         </button>
+                        <?php if ($model->owner_id !== Yii::$app->user->id): ?>
+                            <button class="btn btn-outline-primary fw-bold" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+                                <i class="bi bi-chat-dots-fill me-2"></i> Uliza Swali / Tuma Ujumbe
+                            </button>
+                        <?php endif; ?>
                     <?php else: ?>
                         <a href="<?= Url::to(['/site/login']) ?>" class="btn btn-success btn-lg fw-bold shadow-sm">
                             <i class="bi bi-calendar-check-fill me-2"></i> Login to Book Visit / Reserve
+                        </a>
+                        <a href="<?= Url::to(['/site/login']) ?>" class="btn btn-outline-primary fw-bold">
+                            <i class="bi bi-chat-dots-fill me-2"></i> Ingia Kutuma Ujumbe
                         </a>
                     <?php endif; ?>
                 <?php else: ?>
@@ -241,6 +249,24 @@ $features = [
     </button>
 <?php ActiveForm::end(); ?>
 <?php Modal::end(); ?>
+
+<?php if ($model->owner_id !== Yii::$app->user->id): ?>
+<?php Modal::begin(['id' => 'inquiryModal', 'title' => '💬 Uliza Swali / Tuma Ujumbe kwa Mmiliki']); ?>
+<?= Html::beginForm(['/property/contact', 'id' => $model->id], 'post') ?>
+    <div class="mb-3">
+        <label class="form-label fw-bold">Nambari ya Simu (Phone Number - Optional)</label>
+        <input type="text" name="Inquiry[phone]" class="form-control" placeholder="Mfano: 0755 123 456" value="<?= Html::encode(Yii::$app->user->identity->phone ?? '') ?>">
+    </div>
+    <div class="mb-3">
+        <label class="form-label fw-bold">Ujumbe / Swali Lako <span class="text-danger">*</span></label>
+        <textarea name="Inquiry[message]" class="form-control" rows="4" placeholder="Andika ujumbe au swali lako kuhusu eneo hili..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 fw-bold">
+        <i class="bi bi-send-fill me-1"></i> Tuma Ujumbe (Send Message)
+    </button>
+<?= Html::endForm() ?>
+<?php Modal::end(); ?>
+<?php endif; ?>
 
 <?php Modal::begin(['id' => 'reportModal', 'title' => 'Report Listing']); ?>
 <?php $reportForm = ActiveForm::begin(['action' => ['/property/report', 'id' => $model->id]]); ?>
