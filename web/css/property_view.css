@@ -1,0 +1,368 @@
+/* ==========================================================================
+   EneoLink — Property detail page (views/property/view.php)
+   Same design system as auth.css / listing.css: dhow-at-dusk palette,
+   carved-corner frames, Zilla Slab + Inter. Self-contained (doesn't rely
+   on listing.css being loaded on this page).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.el-view-page {
+  --el-ink: #16232C;
+  --el-sand: #F1E9D8;
+  --el-sand-2: #E8DEC7;
+  --el-teal: #2C7A73;
+  --el-brass: #C79A45;
+  --el-rust: #B3452F;
+  --el-text: #2A2118;
+  --el-white: #FFFFFF;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--el-text);
+}
+
+/* ---------- Image carousel ---------- */
+.el-view-page .el-carousel {
+  position: relative;
+  border: 1px solid rgba(22,35,44,0.14);
+}
+
+.el-view-page .el-carousel .carousel-inner,
+.el-view-page .el-carousel .carousel-item img {
+  border-radius: 0 !important;
+}
+
+.el-view-page .el-carousel::before,
+.el-view-page .el-carousel::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--el-brass);
+  z-index: 3;
+  pointer-events: none;
+}
+.el-view-page .el-carousel::before { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+.el-view-page .el-carousel::after  { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+.el-view-page .el-carousel .carousel-control-prev,
+.el-view-page .el-carousel .carousel-control-next {
+  width: 3rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.el-view-page .el-carousel:hover .carousel-control-prev,
+.el-view-page .el-carousel:hover .carousel-control-next { opacity: 0.85; }
+
+.el-view-page .el-carousel .carousel-indicators [data-bs-target] {
+  background-color: var(--el-brass);
+}
+
+.el-view-page .el-noimg {
+  background: var(--el-sand-2);
+  color: rgba(22,35,44,0.4);
+}
+
+/* ---------- Title / meta / price ---------- */
+.el-view-page .el-view-title {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: var(--el-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.el-view-page .el-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--el-brass);
+  color: var(--el-ink);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.28rem 0.6rem;
+}
+
+.el-view-page .el-view-meta {
+  font-size: 0.92rem;
+  color: #6B5F4E;
+  margin-bottom: 0.6rem;
+}
+
+.el-view-page .el-view-price {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--el-teal);
+  margin-bottom: 1.4rem;
+}
+
+.el-view-page .el-view-price small {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #8A7C66;
+}
+
+.el-view-page hr {
+  border: none;
+  border-top: 1px solid rgba(22,35,44,0.15);
+  margin: 1.5rem 0;
+}
+
+/* ---------- Section headings ---------- */
+.el-view-page .el-section-heading {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--el-ink);
+  margin-bottom: 0.7rem;
+}
+
+.el-view-page p { line-height: 1.65; }
+
+/* ---------- Features ---------- */
+.el-view-page .el-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.el-view-page .el-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(22,35,44,0.15);
+  background: var(--el-white);
+}
+
+.el-view-page .el-feature-item.is-yes i { color: var(--el-teal); }
+.el-view-page .el-feature-item.is-no { color: #8A7C66; }
+.el-view-page .el-feature-item.is-no i { color: rgba(22,35,44,0.3); }
+
+/* ---------- Owner ---------- */
+.el-view-page .el-owner-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--el-sand-2);
+  border: 1px solid rgba(22,35,44,0.14);
+  padding: 1rem 1.2rem;
+}
+
+.el-view-page .el-owner-avatar {
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--el-ink);
+  color: var(--el-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 700;
+}
+
+.el-view-page .el-owner-card strong {
+  display: block;
+  font-family: 'Zilla Slab', Georgia, serif;
+  color: var(--el-ink);
+}
+
+.el-view-page .el-owner-card small {
+  color: #6B5F4E;
+  font-size: 0.85rem;
+}
+
+/* ---------- Action sidebar ---------- */
+.el-view-page .el-action-card {
+  position: relative;
+  background: var(--el-sand-2);
+  border: 1px solid rgba(22,35,44,0.14);
+  padding: 1.4rem;
+}
+
+.el-view-page .el-action-card::before,
+.el-view-page .el-action-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--el-ink);
+  opacity: 0.4;
+}
+.el-view-page .el-action-card::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.el-view-page .el-action-card::after  { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+.el-view-page .el-action-card h5 {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  color: var(--el-ink);
+  margin-bottom: 1rem;
+}
+
+.el-view-page .el-btn-ink,
+.el-view-page .el-btn-outline-ink,
+.el-view-page .el-btn-outline-teal,
+.el-view-page .el-btn-outline-brass {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--el-ink);
+  margin-bottom: 0.6rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.el-view-page .el-btn-ink {
+  background: var(--el-ink);
+  color: var(--el-sand);
+}
+.el-view-page .el-btn-ink:hover { background: var(--el-teal); border-color: var(--el-teal); color: var(--el-white); }
+
+.el-view-page .el-btn-outline-ink {
+  background: transparent;
+  color: var(--el-ink);
+}
+.el-view-page .el-btn-outline-ink:hover { background: var(--el-ink); color: var(--el-sand); }
+
+.el-view-page .el-btn-outline-teal {
+  background: transparent;
+  color: var(--el-teal);
+  border-color: var(--el-teal);
+}
+.el-view-page .el-btn-outline-teal:hover { background: var(--el-teal); color: var(--el-white); }
+
+.el-view-page .el-btn-outline-brass {
+  background: transparent;
+  color: #8A6B2E;
+  border-color: var(--el-brass);
+}
+.el-view-page .el-btn-outline-brass.is-active,
+.el-view-page .el-btn-outline-brass:hover {
+  background: var(--el-brass);
+  color: var(--el-ink);
+}
+
+.el-view-page .el-report-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--el-rust);
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+}
+.el-view-page .el-report-link:hover { color: #8f3423; }
+
+/* ---------- Related properties ---------- */
+.el-view-page .el-related-heading {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--el-ink);
+  margin-bottom: 1rem;
+}
+
+.el-view-page .el-related-card {
+  position: relative;
+  background: var(--el-white);
+  border: 1px solid rgba(22,35,44,0.12);
+  transition: transform 0.15s ease;
+}
+.el-view-page .el-related-card:hover { transform: translateY(-3px); }
+
+.el-view-page .el-related-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 !important;
+}
+
+.el-view-page .el-related-card .card-body { padding: 0.9rem 1rem; }
+
+.el-view-page .el-related-card h6 {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--el-ink);
+  margin-bottom: 0.2rem;
+}
+
+.el-view-page .el-related-card small {
+  color: var(--el-teal);
+  font-weight: 600;
+}
+
+/* ---------- Modals ---------- */
+.el-view-page ~ .modal .modal-content,
+.modal .el-modal-content {
+  background: var(--el-sand);
+  border-radius: 0;
+  border: none;
+}
+
+.modal-content {
+  background: var(--el-sand);
+  border-radius: 0;
+  border: 1px solid rgba(22,35,44,0.15);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(22,35,44,0.15);
+}
+
+.modal-title {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  color: var(--el-ink);
+}
+
+.modal .form-control,
+.modal .form-select {
+  border: none;
+  border-bottom: 1.5px solid rgba(22,35,44,0.3);
+  border-radius: 0;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  padding: 0.55rem 0.1rem;
+}
+.modal .form-control:focus,
+.modal .form-select:focus {
+  outline: none;
+  border-bottom-color: var(--el-teal);
+  box-shadow: none;
+}
+
+.modal .btn-primary,
+.modal .btn-danger {
+  background: var(--el-ink);
+  border-color: var(--el-ink);
+  color: var(--el-sand);
+  border-radius: 0;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+.modal .btn-primary:hover,
+.modal .btn-danger:hover { background: var(--el-teal); border-color: var(--el-teal); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767px) {
+  .el-view-page .el-action-card { margin-top: 1.5rem; position: static !important; }
+  .el-view-page .el-view-title { font-size: 1.5rem; }
+}

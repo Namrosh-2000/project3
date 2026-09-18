@@ -1,0 +1,358 @@
+/* ==========================================================================
+   EneoLink — Auth pages (login / signup)
+   Design idea: a dhow sailing into Dar es Salaam at dusk — deep indigo-ink
+   side panel with a hand-drawn skyline + sail, warm sand-toned form panel,
+   brass accent. Avoids the generic cream+terracotta / rounded-card look.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.el-auth-wrap {
+  --el-ink: #16232C;
+  --el-ink-2: #1E323D;
+  --el-sand: #F1E9D8;
+  --el-sand-2: #E8DEC7;
+  --el-teal: #2C7A73;
+  --el-brass: #C79A45;
+  --el-text: #2A2118;
+  --el-white: #FFFFFF;
+
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--el-text);
+}
+
+/* ---------- Left: story panel ---------- */
+.el-auth-side {
+  position: relative;
+  background: var(--el-ink);
+  color: var(--el-white);
+  padding: 4.5rem 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.el-auth-side::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 260' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%23C79A45' stroke-width='2' stroke-opacity='0.55'%3E%3Cpath d='M0 220 L60 220 L60 150 L90 150 L90 220 L140 220 L140 110 L170 110 L170 220 L230 220 L230 170 L260 170 L260 220 L320 220 L320 90 L340 90 L340 220 L400 220'/%3E%3Cpath d='M480 225 Q520 210 560 225 L560 235 L480 235 Z'/%3E%3Cpath d='M520 225 L520 140'/%3E%3Cpath d='M520 145 C560 150 585 175 592 220 L520 220 Z'/%3E%3Cpath d='M620 220 L680 220 L680 130 L710 130 L710 220 L780 220 L780 175 L800 175 L800 220'/%3E%3C/g%3E%3Cg stroke='%232C7A73' stroke-width='1' stroke-opacity='0.5'%3E%3Cline x1='0' y1='240' x2='800' y2='240'/%3E%3Cline x1='0' y1='250' x2='800' y2='247'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 100%;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.el-auth-side::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--el-brass) 0 18px,
+    transparent 18px 26px,
+    var(--el-teal) 26px 44px,
+    transparent 44px 52px
+  );
+  opacity: 0.8;
+}
+
+.el-auth-side > * { position: relative; z-index: 1; }
+
+.el-auth-side h2 {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  margin: 0 0 0.9rem;
+  max-width: 15ch;
+}
+
+.el-auth-side > p {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.72);
+  max-width: 38ch;
+  margin: 0 0 2.4rem;
+}
+
+.el-auth-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.el-auth-perk:last-of-type {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.el-auth-perk i {
+  flex: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--el-brass);
+  color: var(--el-brass);
+  font-size: 1rem;
+}
+
+.el-auth-perk strong {
+  display: block;
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--el-white);
+  margin-bottom: 0.15rem;
+}
+
+.el-auth-perk span {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.45;
+}
+
+/* ---------- Right: form panel ---------- */
+.el-auth-panel {
+  position: relative;
+  background: var(--el-sand);
+  padding: 4.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.el-auth-panel::before,
+.el-auth-panel::after {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 2px solid var(--el-ink);
+  opacity: 0.55;
+}
+.el-auth-panel::before { top: 28px; left: 28px; border-right: none; border-bottom: none; }
+.el-auth-panel::after  { bottom: 28px; right: 28px; border-left: none; border-top: none; }
+
+.el-heading {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  margin: 0 0 0.4rem;
+  color: var(--el-ink);
+}
+
+.el-auth-sub {
+  font-size: 0.95rem;
+  color: #6B5F4E;
+  margin: 0 0 2rem;
+  max-width: 42ch;
+  line-height: 1.55;
+}
+
+/* ---------- Role selector (signup) ---------- */
+.el-role-group {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0 0 1.6rem;
+}
+
+.el-role-group input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.el-role-group label {
+  flex: 1;
+  cursor: pointer;
+  margin: 0;
+}
+
+.el-role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 0.5rem;
+  border: 1px solid rgba(22,35,44,0.22);
+  background: transparent;
+  color: var(--el-ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.el-role-card i { font-size: 1.15rem; }
+
+.el-role-group input:checked + label .el-role-card {
+  background: var(--el-ink);
+  border-color: var(--el-ink);
+  color: var(--el-sand);
+}
+
+.el-role-group input:focus-visible + label .el-role-card {
+  outline: 2px solid var(--el-teal);
+  outline-offset: 2px;
+}
+
+.el-role-group label:hover .el-role-card {
+  border-color: var(--el-ink);
+}
+
+/* ---------- Form fields ---------- */
+.el-auth-panel .mb-3,
+.el-auth-panel .form-group {
+  margin-bottom: 1.3rem;
+}
+
+.el-auth-panel .form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #6B5F4E;
+  margin-bottom: 0.35rem;
+}
+
+.el-auth-panel .form-control {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid rgba(22,35,44,0.3);
+  background: transparent;
+  border-radius: 0;
+  padding: 0.55rem 0.1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--el-ink);
+  transition: border-color 0.15s ease;
+}
+
+.el-auth-panel .form-control::placeholder {
+  color: rgba(42,33,24,0.35);
+}
+
+.el-auth-panel .form-control:focus {
+  outline: none;
+  border-bottom-color: var(--el-teal);
+  box-shadow: none;
+}
+
+.el-auth-panel .form-control.is-invalid {
+  border-bottom-color: #B3452F;
+}
+
+.el-auth-panel .invalid-feedback {
+  display: block;
+  font-size: 0.78rem;
+  color: #B3452F;
+  margin-top: 0.3rem;
+}
+
+.el-auth-panel .hint-block,
+.el-auth-panel .form-text {
+  font-size: 0.78rem;
+  color: #8A7C66;
+  margin-top: 0.3rem;
+}
+
+.el-auth-panel .form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: -0.2rem 0 1.4rem;
+}
+
+.el-auth-panel .form-check-input {
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 1.5px solid rgba(22,35,44,0.4);
+  border-radius: 3px;
+  background: transparent;
+}
+
+.el-auth-panel .form-check-input:checked {
+  background-color: var(--el-teal);
+  border-color: var(--el-teal);
+}
+
+.el-auth-panel .form-check-label {
+  font-size: 0.88rem;
+  color: var(--el-text);
+}
+
+/* ---------- Submit ---------- */
+.el-auth-submit {
+  background: var(--el-ink);
+  color: var(--el-sand);
+  border: none;
+  padding: 0.85rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.el-auth-submit:hover {
+  background: var(--el-brass);
+  color: var(--el-ink);
+}
+
+.el-auth-submit:active { transform: translateY(1px); }
+
+.el-auth-submit:focus-visible {
+  outline: 2px solid var(--el-teal);
+  outline-offset: 2px;
+}
+
+/* ---------- Switch link ---------- */
+.el-auth-switch {
+  margin-top: 1.6rem;
+  font-size: 0.9rem;
+  color: #6B5F4E;
+}
+
+.el-auth-switch a {
+  color: var(--el-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--el-brass);
+  text-underline-offset: 3px;
+}
+
+.el-auth-switch a:hover { color: var(--el-teal); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .el-auth-wrap {
+    grid-template-columns: 1fr;
+  }
+  .el-auth-side {
+    padding: 3rem 1.75rem 5rem;
+    min-height: 340px;
+  }
+  .el-auth-side h2 { font-size: 1.9rem; }
+  .el-auth-panel {
+    padding: 3rem 1.75rem 3.5rem;
+  }
+  .el-role-group { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .el-auth-submit { transition: none; }
+}

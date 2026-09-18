@@ -1,0 +1,86 @@
+/* ==========================================================================
+   EneoLink — Property listing page (views/property/index.php)
+   Same design system as auth.css: dhow-at-dusk palette, carved-corner
+   frames, Zilla Slab + Inter. Scoped under .el-listing-page so it doesn't
+   leak into the rest of the site.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+.el-listing-page {
+  --el-ink: #16232C;
+  --el-sand: #F1E9D8;
+  --el-sand-2: #E8DEC7;
+  --el-teal: #2C7A73;
+  --el-brass: #C79A45;
+  --el-text: #2A2118;
+  --el-white: #FFFFFF;
+
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--el-text);
+}
+
+.el-listing-page .el-heading {
+  font-family: 'Zilla Slab', Georgia, serif;
+  font-weight: 600;
+  color: var(--el-ink);
+}
+
+/* ---------- Filter sidebar ---------- */
+.el-listing-page .el-filter-card {
+  position: relative;
+  background: var(--el-sand-2);
+  border: 1px solid rgba(22,35,44,0.14);
+  padding: 1.5rem 1.4rem;
+}
+
+.el-listing-page .el-filter-card::before,
+.el-listing-page .el-filter-card::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--el-ink);
+  opacity: 0.4;
+}
+.el-listing-page .el-filter-card::before { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.el-listing-page .el-filter-card::after  { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+.el-listing-page .el-filter-card .el-heading {
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.el-listing-page .el-filter-section-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--el-ink);
+  border-top: 1px solid rgba(22,35,44,0.15);
+  padding-top: 0.9rem;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.el-listing-page .el-filter-card .form-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #6B5F4E;
+  margin-bottom: 0.3rem;
+}
+
+.el-listing-page .el-filter-card .form-control,
+.el-listing-page .el-filter-card .form-select {
+  border: none;
+  border-bottom: 1.5px solid rgba(22,35,44,0.3);
+  border-radius: 0;
+  background: transparent;
+  padding: 0.5rem 0.1rem;
+  font-size: 0.92rem;
+  color: var(--el-ink);
+}
+
+.el-listing-page .el-filter-card .form-control:focus,
+.el-listing-page .el-filter-card .form-select:focus {
+  outline: none;
+  border-bottom-color: var(--el-teal);
+  box-shadow: none;
+}
