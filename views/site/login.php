@@ -8,45 +8,67 @@ use yii\bootstrap5\Html;
 
 $this->registerCssFile('@web/css/auth.css');
 
-$this->title = 'Login';
+$this->title = Yii::t('app', 'auth.login_title') . ' | MachoMtaa';
+$returnUrl = Yii::$app->request->get('returnUrl');
 ?>
 <div class="el-auth-wrap">
     <div class="el-auth-side">
-        <h2>Karibu tena EneoLink</h2>
-        <p>Ingia kuendelea kutafuta properties, kufuatilia inquiries zako, na kupata fursa mpya za biashara Kinondoni.</p>
+        <h2><?= Html::encode(Yii::t('app', 'auth.welcome_back_brand')) ?></h2>
+        <p><?= Html::encode(Yii::t('app', 'auth.login_side_sub')) ?></p>
 
         <div class="el-auth-perk">
-            <i class="bi bi-search"></i>
-            <div><strong>Endelea kutafuta</strong><span>Rudi kwenye search zako na favorites</span></div>
+            <i class="bi bi-graph-up-arrow text-warning"></i>
+            <div>
+                <strong><?= Html::encode(Yii::t('app', 'auth.perk_intelligence_title')) ?></strong>
+                <span><?= Html::encode(Yii::t('app', 'auth.perk_intelligence_desc')) ?></span>
+            </div>
         </div>
         <div class="el-auth-perk">
-            <i class="bi bi-chat-dots"></i>
-            <div><strong>Fuatilia inquiries</strong><span>Ona majibu kutoka kwa wamiliki na mawakala</span></div>
+            <i class="bi bi-shop text-warning"></i>
+            <div>
+                <strong><?= Html::encode(Yii::t('app', 'auth.perk_spaces_title')) ?></strong>
+                <span><?= Html::encode(Yii::t('app', 'auth.perk_spaces_desc')) ?></span>
+            </div>
         </div>
         <div class="el-auth-perk">
-            <i class="bi bi-lightbulb"></i>
-            <div><strong>Fursa za biashara</strong><span>Pata mapendekezo mapya ya biashara eneo lako</span></div>
+            <i class="bi bi-speedometer2 text-warning"></i>
+            <div>
+                <strong><?= Html::encode(Yii::t('app', 'auth.perk_dashboard_title')) ?></strong>
+                <span><?= Html::encode(Yii::t('app', 'auth.perk_dashboard_desc')) ?></span>
+            </div>
         </div>
     </div>
 
     <div class="el-auth-panel">
-        <h2 class="el-heading"><?= Html::encode($this->title) ?></h2>
-        <p class="el-auth-sub">Ingiza taarifa zako kuendelea na akaunti yako.</p>
+        <h2 class="el-heading"><?= Html::encode(Yii::t('app', 'auth.login_title')) ?></h2>
+        <p class="el-auth-sub"><?= Html::encode(Yii::t('app', 'auth.login_side_sub')) ?></p>
 
         <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'placeholder' => 'Username au Email'])->label('Username or Email') ?>
-            <?= $form->field($model, 'password')->passwordInput(['placeholder' => '••••••••']) ?>
-            <?= $form->field($model, 'rememberMe')->checkbox() ?>
+            <?= $form->field($model, 'username')->textInput([
+                'autofocus' => true,
+                'placeholder' => Yii::t('app', 'auth.username_or_email'),
+            ])->label(Yii::t('app', 'auth.username_or_email')) ?>
 
-            <div class="form-group mt-2">
-                <?= Html::submitButton('Login', ['class' => 'btn el-auth-submit w-100']) ?>
+            <?= $form->field($model, 'password')->passwordInput([
+                'placeholder' => '••••••••',
+            ])->label(Yii::t('app', 'auth.password')) ?>
+
+            <?= $form->field($model, 'rememberMe')->checkbox([
+                'label' => Yii::t('app', 'auth.remember_me'),
+            ]) ?>
+
+            <div class="form-group mt-3">
+                <?= Html::submitButton(Html::encode(Yii::t('app', 'auth.btn_login')), [
+                    'class' => 'btn el-auth-submit w-100',
+                ]) ?>
             </div>
 
         <?php ActiveForm::end(); ?>
 
         <div class="el-auth-switch">
-            Huna akaunti? <?= Html::a('Sign up', ['/site/signup']) ?>
+            <?= Html::encode(Yii::t('app', 'auth.no_account')) ?>
+            <?= Html::a(Html::encode(Yii::t('app', 'Sign Up')), array_merge(['/site/signup'], $returnUrl ? ['returnUrl' => $returnUrl] : [])) ?>
         </div>
     </div>
 </div>

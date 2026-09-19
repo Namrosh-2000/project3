@@ -290,3 +290,1008 @@ $_SERVER = [
     ]
     'argc' => 1
 ]
+2026-09-19 08:47:55 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request: migrate/status in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Controller.php:153
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Controller.php(187): yii\base\Controller->runAction()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Module.php(547): yii\console\Controller->runAction()
+#2 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#4 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Application.php(382): yii\console\Application->handleRequest()
+#5 /home/narnam/Downloads/eneo/yii(20): yii\base\Application->run()
+#6 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "migrate/status". in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php:183
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Application.php(382): yii\console\Application->handleRequest()
+#2 /home/narnam/Downloads/eneo/yii(20): yii\base\Application->run()
+#3 {main}
+2026-09-19 08:47:55 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => './yii'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":32, \"toolCall\":{\"id\":\"call_237582\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"./yii migrate/status\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":5000,\\\"toolAction\\\":\\\"Checking migration status\\\",\\\"toolSummary\\\":\\\"Yii migration status check\\\"}\", \"thinkingSignature\":\"EsMBCsABAWkUfROUspIl5gZXbxwb4xULfJBoqPmpAeUkehQGnYTSfa8WhPZ53FgXCwrKXCRSFQ74NSAz4r6DkEr7jFwoQWUOpZ2iR7rLceiuMe8kMClgglHNOVOazM3Or0WNFyqsC+1yKEhOu3sOvoPWd9/UA7rSwSzHtjAxb84++8oAZmnQAQuLUOxBCUP/6NBobB6LcCk1lkQN8QqsB/vER/AV61VvtCFny9a6GZuqt9v1sOZqxQyLGUBykVXxGZ4Y4MN0\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789807675.2404
+    'REQUEST_TIME' => 1789807675
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate/status'
+    ]
+    'argc' => 2
+]
+2026-09-19 08:48:02 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php:721
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(721): PDO->__construct()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1066): yii\db\Connection->open()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#5 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(1181): yii\db\Command->prepare()
+#6 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(417): yii\db\Command->queryInternal()
+#7 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(370): yii\db\Command->queryAll()
+#8 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(138): yii\db\mysql\Schema->findColumns()
+#9 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(757): yii\db\mysql\Schema->loadTableSchema()
+#10 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(193): yii\db\Schema->getTableMetadata()
+#11 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(218): yii\db\Schema->getTableSchema()
+#12 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(560): yii\console\controllers\MigrateController->getMigrationHistory()
+#13 [internal function]: yii\console\controllers\BaseMigrateController->actionHistory()
+#14 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/InlineAction.php(60): call_user_func_array()
+#15 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Controller.php(182): yii\base\InlineAction->runWithParams()
+#16 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Controller.php(187): yii\base\Controller->runAction()
+#17 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Module.php(547): yii\console\Controller->runAction()
+#18 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction()
+#19 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#20 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Application.php(382): yii\console\Application->handleRequest()
+#21 /home/narnam/Downloads/eneo/yii(20): yii\base\Application->run()
+#22 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php:647
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1066): yii\db\Connection->open()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(1181): yii\db\Command->prepare()
+#4 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(417): yii\db\Command->queryInternal()
+#5 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(370): yii\db\Command->queryAll()
+#6 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(138): yii\db\mysql\Schema->findColumns()
+#7 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(757): yii\db\mysql\Schema->loadTableSchema()
+#8 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(193): yii\db\Schema->getTableMetadata()
+#9 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/controllers/MigrateController.php(218): yii\db\Schema->getTableSchema()
+#10 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php(560): yii\console\controllers\MigrateController->getMigrationHistory()
+#11 [internal function]: yii\console\controllers\BaseMigrateController->actionHistory()
+#12 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/InlineAction.php(60): call_user_func_array()
+#13 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Controller.php(182): yii\base\InlineAction->runWithParams()
+#14 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Controller.php(187): yii\base\Controller->runAction()
+#15 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Module.php(547): yii\console\Controller->runAction()
+#16 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction()
+#17 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#18 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Application.php(382): yii\console\Application->handleRequest()
+#19 /home/narnam/Downloads/eneo/yii(20): yii\base\Application->run()
+#20 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+2026-09-19 08:48:02 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => './yii'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":36, \"toolCall\":{\"id\":\"call_396209\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"./yii migrate/history\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":5000,\\\"toolAction\\\":\\\"Checking applied migrations\\\",\\\"toolSummary\\\":\\\"Yii migrate history\\\"}\", \"thinkingSignature\":\"Ev4BCvsBAWkUfRPZB3f1MgGZVxqDKg/RZ0nXoSlduLf4WGvFfekq1GUL595k8UrxDTeD6E5Al0QRgiyw5xVAliohpSz3LJuXhmVeioYZXJG4ucYU6dBA6Ja5+OXYRyuCM6drqn/ozCli46uLEn7GHuBLYFncAsKomHqvH1bsjElq63IS4ARRwZ4HX3XQDJ/U+cChw9vz1G36sUWxLU/trHyoyudqsXJgpiedgc9xbU+BFCk2WXIhvfABWQwyt5coHVl3D6ZPWE7UQaLogxWlCmwweiPLrvrdoGFHSvaYAkOgyn44gjIG15IhP8r+MddzUbkR5LsxBkyhhLmM2R03rZ0=\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => './yii'
+    'SCRIPT_NAME' => './yii'
+    'SCRIPT_FILENAME' => './yii'
+    'PATH_TRANSLATED' => './yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789807682.1071
+    'REQUEST_TIME' => 1789807682
+    'argv' => [
+        0 => './yii'
+        1 => 'migrate/history'
+    ]
+    'argc' => 2
+]
+2026-09-19 09:08:16 [][-][-][error][yii\i18n\GettextMessageSource::loadMessages] The message file for category 'yii/bootstrap5' does not exist: /home/narnam/Downloads/eneo/vendor/yiisoft/yii2-bootstrap5/src/messages/sw/messages.mo
+2026-09-19 09:08:16 [][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => '/usr/bin/php'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":128, \"toolCall\":{\"id\":\"call_358392\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"php -d session.save_path=/home/narnam/Downloads/eneo/runtime -r \'\\\\n$_SERVER[\\\\\\\"SCRIPT_FILENAME\\\\\\\"] = \\\\\\\"/home/narnam/Downloads/eneo/web/index.php\\\\\\\";\\\\n$_SERVER[\\\\\\\"SCRIPT_NAME\\\\\\\"] = \\\\\\\"/index.php\\\\\\\";\\\\n$_SERVER[\\\\\\\"SERVER_NAME\\\\\\\"] = \\\\\\\"localhost\\\\\\\";\\\\n$_SERVER[\\\\\\\"SERVER_PORT\\\\\\\"] = 80;\\\\n$_SERVER[\\\\\\\"REQUEST_URI\\\\\\\"] = \\\\\\\"/\\\\\\\";\\\\n\\\\nrequire \\\\\\\"vendor/autoload.php\\\\\\\";\\\\nrequire \\\\\\\"vendor/yiisoft/yii2/Yii.php\\\\\\\";\\\\n$config = require \\\\\\\"config/web.php\\\\\\\";\\\\n$app = new yii\\\\\\\\web\\\\\\\\Application($config);\\\\n$app-\\\\u003esession-\\\\u003eopen();\\\\n\\\\n$controller = new app\\\\\\\\controllers\\\\\\\\SiteController(\\\\\\\"site\\\\\\\", $app);\\\\n$viewOutput = $controller-\\\\u003erender(\\\\\\\"@app/views/site/index\\\\\\\", [\\\\n    \\\\\\\"featured\\\\\\\" =\\\\u003e [],\\\\n    \\\\\\\"categories\\\\\\\" =\\\\u003e [],\\\\n    \\\\\\\"wards\\\\\\\" =\\\\u003e [],\\\\n]);\\\\n\\\\nif (strpos($viewOutput, \\\\\\\"MachoMtaa\\\\\\\") !== false \\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"Nyumbani\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"Fursa\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"Fremu Soko\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"Badili Lugha\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"Fungua Dashibodi Yako\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"mapigo ya soko\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"ramani ya faida\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"MJASIRIAMALI\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"MMILIKI WA ENEO\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"MFUMO WA ZAMANI\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"MFUMO MPYA\\\\\\\") !== false\\\\n    \\\\u0026\\\\u0026 strpos($viewOutput, \\\\\\\"Data ya Mfano\\\\\\\") !== false) {\\\\n    echo \\\\\\\"VERIFICATION PASSED: All Phase 1 elements render perfectly!\\\\\\\\n\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\"VERIFICATION FAILED: Some required elements are missing!\\\\\\\\n\\\\\\\";\\\\n}\\\\n\'\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":5000,\\\"toolAction\\\":\\\"Running comprehensive view verification\\\",\\\"toolSummary\\\":\\\"End-to-end Phase 1 layout test\\\"}\", \"thinkingSignature\":\"EqUCCqICAWkUfRN3TaCz9lEbR5P6meRcS6EbRpvJHEroX5Sui/V8um9F6cjLutuPVHkBAC8Oou0mRNXXXhVWitdIm57GJgCJPypjjO78mfdO9zO76VNPPEnjg1WOtmfS9w55iFziG2updKcirVEolfzeOyAyQCwuAd8Dek8/sFwc/asorRPrOkelEpayU3q5mlYxbWKW1jXAPuagcJ2ALiRPlE1jYeGSqe+k68t2WwtVhj48i6tNfRfCPizFBLEJSUP32exDhfAat//hUQb3V6I+8zIHOy5FUMhUZgl6ZRpzgN4CNv9jilq2L+j1COSpTurEjBv66Zfx1LRrjTegs28LMhEajukO6TGxgZPOH2ct8lIuq9AxM3Pp9mKFBYSkfV9/UXm93Mo=\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => 'Standard input code'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/home/narnam/Downloads/eneo/web/index.php'
+    'PATH_TRANSLATED' => ''
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789808896.7243
+    'REQUEST_TIME' => 1789808896
+    'argv' => [
+        0 => 'Standard input code'
+    ]
+    'argc' => 1
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => 80
+    'REQUEST_URI' => '/'
+]
+2026-09-19 09:54:38 [][-][3738eb42fe029ef43778b90f5379012b][error][yii\base\ErrorException:1] yii\base\ErrorException: Uncaught Error: Call to a member function getRoute() on null in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseUrl.php:431
+Stack trace:
+#0 /home/narnam/Downloads/eneo/views/business/index.php(98): yii\helpers\BaseUrl::current()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(345): require('...')
+#2 [internal function]: yii\base\View->{closure:yii\base\View::renderPhpFile():343}()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(350): call_user_func_array()
+#4 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile()
+#5 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile()
+#6 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Controller.php(423): yii\base\View->render()
+#7 Command line code(15): yii\base\Controller->render()
+#8 {main}
+  thrown in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseUrl.php:431
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2026-09-19 09:54:38 [][-][3738eb42fe029ef43778b90f5379012b][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/messages/sw/yii.php
+2026-09-19 09:54:38 [][-][3738eb42fe029ef43778b90f5379012b][error][yii\i18n\GettextMessageSource::loadMessages] The message file for category 'yii/bootstrap5' does not exist: /home/narnam/Downloads/eneo/vendor/yiisoft/yii2-bootstrap5/src/messages/sw/messages.mo
+2026-09-19 09:54:38 [][-][3738eb42fe029ef43778b90f5379012b][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => '/usr/bin/php'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":270, \"toolCall\":{\"id\":\"call_385942\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"php -d session.save_path=/home/narnam/Downloads/eneo/runtime -r \\\\\\\"\\\\n\\\\\\\\$_SERVER[\'SCRIPT_FILENAME\'] = __DIR__ . \'/web/index.php\';\\\\n\\\\\\\\$_SERVER[\'SCRIPT_NAME\'] = \'/index.php\';\\\\n\\\\\\\\$_SERVER[\'REQUEST_URI\'] = \'/business/index\';\\\\n\\\\\\\\$_SERVER[\'SERVER_NAME\'] = \'localhost\';\\\\n\\\\\\\\$_SERVER[\'SERVER_PORT\'] = \'80\';\\\\n\\\\nrequire __DIR__ . \'/vendor/autoload.php\';\\\\nrequire __DIR__ . \'/vendor/yiisoft/yii2/Yii.php\';\\\\n\\\\\\\\$config = require __DIR__ . \'/config/web.php\';\\\\n\\\\\\\\$config[\'language\'] = \'sw\';\\\\nnew yii\\\\\\\\web\\\\\\\\Application(\\\\\\\\$config);\\\\n\\\\n\\\\\\\\$controller = new app\\\\\\\\controllers\\\\\\\\BusinessController(\'business\', Yii::\\\\\\\\$app);\\\\n\\\\\\\\$outputSw = \\\\\\\\$controller-\\\\u003erender(\'index\', [\\\\n    \'wards\' =\\\\u003e [\'Sinza\', \'Kawe\', \'Mwenge\', \'Mikocheni\', \'Kijitonyama\'],\\\\n    \'results\' =\\\\u003e [],\\\\n    \'budget\' =\\\\u003e 2000000,\\\\n    \'ward\' =\\\\u003e \'Sinza\',\\\\n    \'selectedInterest\' =\\\\u003e \'Saluni\',\\\\n    \'selectedLocationId\' =\\\\u003e 1,\\\\n    \'user\' =\\\\u003e null,\\\\n    \'businessType\' =\\\\u003e \'Saluni ya Kike\',\\\\n    \'businessVision\' =\\\\u003e \'Kufungua saluni ya kisasa\',\\\\n    \'targetCustomers\' =\\\\u003e \'Wanafunzi na wafanyakazi\',\\\\n    \'startingBudget\' =\\\\u003e 5000000,\\\\n    \'spaceSizeNeeded\' =\\\\u003e \'30 sqm\',\\\\n    \'specialRequirements\' =\\\\u003e \'Maji ya uhakika\',\\\\n    \'saved\' =\\\\u003e null,\\\\n]);\\\\n\\\\necho \\\\\\\\\\\\\\\"=== SW TEST ===\\\\\\\\n\\\\\\\\\\\\\\\";\\\\nif (strpos(\\\\\\\\$outputSw, \'Ushindi huanza na wewe, weka maono yako AI ifichue fursa zako.\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found exact corrected quote in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Could not find corrected quote in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nif (strpos(\\\\\\\\$outputSw, \'01. Maono na Wazo la Biashara\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputSw, \'02. Eneo na Vigezo vya Fremu\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputSw, \'03. Uwezo wa Kifedha na Bajeti\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found all 3 form sections in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing form sections in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\npreg_match_all(\'/fursa\\\\\\\\.[a-z0-9_]+/i\', \\\\\\\\$outputSw, \\\\\\\\$matches);\\\\nif (empty(\\\\\\\\$matches[0])) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Zero untranslated keys in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Untranslated keys found in SW: \\\\\\\\\\\\\\\" . implode(\', \', \\\\\\\\$matches[0]) . \\\\\\\\\\\\\\\"\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nYii::\\\\\\\\$app-\\\\u003elanguage = \'en\';\\\\n\\\\\\\\$outputEn = \\\\\\\\$controller-\\\\u003erender(\'index\', [\\\\n    \'wards\' =\\\\u003e [\'Sinza\', \'Kawe\', \'Mwenge\', \'Mikocheni\', \'Kijitonyama\'],\\\\n    \'results\' =\\\\u003e [],\\\\n    \'budget\' =\\\\u003e 2000000,\\\\n    \'ward\' =\\\\u003e \'Sinza\',\\\\n    \'selectedInterest\' =\\\\u003e \'Salon\',\\\\n    \'selectedLocationId\' =\\\\u003e 1,\\\\n    \'user\' =\\\\u003e null,\\\\n    \'businessType\' =\\\\u003e \'Salon\',\\\\n    \'businessVision\' =\\\\u003e \'Modern salon\',\\\\n    \'targetCustomers\' =\\\\u003e \'Students\',\\\\n    \'startingBudget\' =\\\\u003e 5000000,\\\\n    \'spaceSizeNeeded\' =\\\\u003e \'30 sqm\',\\\\n    \'specialRequirements\' =\\\\u003e \'Water supply\',\\\\n    \'saved\' =\\\\u003e null,\\\\n]);\\\\n\\\\necho \\\\\\\\\\\\\\\"=== EN TEST ===\\\\\\\\n\\\\\\\\\\\\\\\";\\\\nif (strpos(\\\\\\\\$outputEn, \'Success starts with you\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found English quote!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing English quote!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nif (strpos(\\\\\\\\$outputEn, \'01. Vision \\\\u0026 Business Concept\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputEn, \'02. Location \\\\u0026 Space Specifications\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputEn, \'03. Financial Parameters \\\\u0026 Budget\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found all 3 form sections in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing form sections in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\npreg_match_all(\'/fursa\\\\\\\\.[a-z0-9_]+/i\', \\\\\\\\$outputEn, \\\\\\\\$matchesEn);\\\\nif (empty(\\\\\\\\$matchesEn[0])) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Zero untranslated keys in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Untranslated keys found in EN: \\\\\\\\\\\\\\\" . implode(\', \', \\\\\\\\$matchesEn[0]) . \\\\\\\\\\\\\\\"\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\\\\"\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":3000,\\\"toolAction\\\":\\\"Running CLI rendering verification in SW and EN\\\",\\\"toolSummary\\\":\\\"Execute test rendering in SW and EN\\\"}\", \"thinkingSignature\":\"EsUCCsICAWkUfRMp6vfOGdFnLxoDHl6sugc87XI1nOwVc+n0JmD2rVcg2Ff2PHXHT5ZAvQ5v9lgYb2qVFm8rFKfaJzresYXZ15DxMXBvKNw2QXP/Mgt90zKwnKW6qiiYSoaGiX4oL6TPf5wAMlwKMZzqfDSaPA+qId/M5RC/caVSgZ5LeLqdpcyqEzWquL/i6JMIFHYw5CfUQkkiKUsbD60nNYF2ooJ4djMiiiRc8o1accWoazi9UE+/MUgSs68RbCDWkDuekr8C0MaRvHXwo49bwS0oFoiQRRihG8IQRwrzM/Qxi+7HS5JMK5TB8firSlLSOEZSEPJugpXClU6h0AXXSlhgH1GUIXRVb58V41glPtdgT39L3pGtNyC87KjfsT13EM8ievyt0eZxZ4DjBQq6Hwh0HHKHlRmwp4W67QyI+zJDIgV4Eg==\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => 'Standard input code'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/home/narnam/Downloads/eneo/web/index.php'
+    'PATH_TRANSLATED' => ''
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789811678.5934
+    'REQUEST_TIME' => 1789811678
+    'argv' => [
+        0 => 'Standard input code'
+    ]
+    'argc' => 1
+    'REQUEST_URI' => '/business/index'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+]
+2026-09-19 09:55:00 [][-][-][error][yii\i18n\GettextMessageSource::loadMessages] The message file for category 'yii/bootstrap5' does not exist: /home/narnam/Downloads/eneo/vendor/yiisoft/yii2-bootstrap5/src/messages/sw/messages.mo
+2026-09-19 09:55:00 [][-][-][warning][application] You're trying to register a file after View::endPage() has been called.
+2026-09-19 09:55:00 [][-][-][warning][application] You're trying to register a file after View::endPage() has been called.
+2026-09-19 09:55:00 [][-][-][warning][application] You're trying to register a file after View::endPage() has been called.
+2026-09-19 09:55:00 [][-][-][warning][application] You're trying to register a file after View::endPage() has been called.
+2026-09-19 09:55:00 [][-][-][warning][application] You're trying to register a file after View::endPage() has been called.
+2026-09-19 09:55:00 [][-][-][warning][application] You're trying to register a file after View::endPage() has been called.
+2026-09-19 09:55:00 [][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => '/usr/bin/php'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":276, \"toolCall\":{\"id\":\"call_427464\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"php -d session.save_path=/home/narnam/Downloads/eneo/runtime -r \\\\\\\"\\\\n\\\\\\\\$_SERVER[\'SCRIPT_FILENAME\'] = __DIR__ . \'/web/index.php\';\\\\n\\\\\\\\$_SERVER[\'SCRIPT_NAME\'] = \'/index.php\';\\\\n\\\\\\\\$_SERVER[\'REQUEST_URI\'] = \'/business/index\';\\\\n\\\\\\\\$_SERVER[\'SERVER_NAME\'] = \'localhost\';\\\\n\\\\\\\\$_SERVER[\'SERVER_PORT\'] = \'80\';\\\\n\\\\nrequire __DIR__ . \'/vendor/autoload.php\';\\\\nrequire __DIR__ . \'/vendor/yiisoft/yii2/Yii.php\';\\\\n\\\\\\\\$config = require __DIR__ . \'/config/web.php\';\\\\n\\\\\\\\$config[\'language\'] = \'sw\';\\\\nnew yii\\\\\\\\web\\\\\\\\Application(\\\\\\\\$config);\\\\n\\\\n\\\\\\\\$controller = new app\\\\\\\\controllers\\\\\\\\BusinessController(\'business\', Yii::\\\\\\\\$app);\\\\n\\\\\\\\$outputSw = \\\\\\\\$controller-\\\\u003erender(\'index\', [\\\\n    \'wards\' =\\\\u003e [\'Sinza\', \'Kawe\', \'Mwenge\', \'Mikocheni\', \'Kijitonyama\'],\\\\n    \'results\' =\\\\u003e [],\\\\n    \'budget\' =\\\\u003e 2000000,\\\\n    \'ward\' =\\\\u003e \'Sinza\',\\\\n    \'selectedInterest\' =\\\\u003e \'Saluni\',\\\\n    \'selectedLocationId\' =\\\\u003e 1,\\\\n    \'user\' =\\\\u003e null,\\\\n    \'businessType\' =\\\\u003e \'Saluni ya Kike\',\\\\n    \'businessVision\' =\\\\u003e \'Kufungua saluni ya kisasa\',\\\\n    \'targetCustomers\' =\\\\u003e \'Wanafunzi na wafanyakazi\',\\\\n    \'startingBudget\' =\\\\u003e 5000000,\\\\n    \'spaceSizeNeeded\' =\\\\u003e \'30 sqm\',\\\\n    \'specialRequirements\' =\\\\u003e \'Maji ya uhakika\',\\\\n    \'saved\' =\\\\u003e null,\\\\n]);\\\\n\\\\necho \\\\\\\\\\\\\\\"=== SW TEST ===\\\\\\\\n\\\\\\\\\\\\\\\";\\\\nif (strpos(\\\\\\\\$outputSw, \'Ushindi huanza na wewe, weka maono yako AI ifichue fursa zako.\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found exact corrected quote in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Could not find corrected quote in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nif (strpos(\\\\\\\\$outputSw, \'01. Maono na Wazo la Biashara\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputSw, \'02. Eneo na Vigezo vya Fremu\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputSw, \'03. Uwezo wa Kifedha na Bajeti\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found all 3 form sections in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing form sections in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\npreg_match_all(\'/fursa\\\\\\\\.[a-z0-9_]+/i\', \\\\\\\\$outputSw, \\\\\\\\$matches);\\\\nif (empty(\\\\\\\\$matches[0])) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Zero untranslated keys in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Untranslated keys found in SW: \\\\\\\\\\\\\\\" . implode(\', \', \\\\\\\\$matches[0]) . \\\\\\\\\\\\\\\"\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nYii::\\\\\\\\$app-\\\\u003elanguage = \'en\';\\\\n\\\\\\\\$outputEn = \\\\\\\\$controller-\\\\u003erender(\'index\', [\\\\n    \'wards\' =\\\\u003e [\'Sinza\', \'Kawe\', \'Mwenge\', \'Mikocheni\', \'Kijitonyama\'],\\\\n    \'results\' =\\\\u003e [],\\\\n    \'budget\' =\\\\u003e 2000000,\\\\n    \'ward\' =\\\\u003e \'Sinza\',\\\\n    \'selectedInterest\' =\\\\u003e \'Salon\',\\\\n    \'selectedLocationId\' =\\\\u003e 1,\\\\n    \'user\' =\\\\u003e null,\\\\n    \'businessType\' =\\\\u003e \'Salon\',\\\\n    \'businessVision\' =\\\\u003e \'Modern salon\',\\\\n    \'targetCustomers\' =\\\\u003e \'Students\',\\\\n    \'startingBudget\' =\\\\u003e 5000000,\\\\n    \'spaceSizeNeeded\' =\\\\u003e \'30 sqm\',\\\\n    \'specialRequirements\' =\\\\u003e \'Water supply\',\\\\n    \'saved\' =\\\\u003e null,\\\\n]);\\\\n\\\\necho \\\\\\\\\\\\\\\"=== EN TEST ===\\\\\\\\n\\\\\\\\\\\\\\\";\\\\nif (strpos(\\\\\\\\$outputEn, \'Success starts with you\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found English quote!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing English quote!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nif (strpos(\\\\\\\\$outputEn, \'01. Vision \\\\u0026 Business Concept\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputEn, \'02. Location \\\\u0026 Space Specifications\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputEn, \'03. Financial Parameters \\\\u0026 Budget\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found all 3 form sections in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing form sections in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\npreg_match_all(\'/fursa\\\\\\\\.[a-z0-9_]+/i\', \\\\\\\\$outputEn, \\\\\\\\$matchesEn);\\\\nif (empty(\\\\\\\\$matchesEn[0])) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Zero untranslated keys in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Untranslated keys found in EN: \\\\\\\\\\\\\\\" . implode(\', \', \\\\\\\\$matchesEn[0]) . \\\\\\\\\\\\\\\"\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\\\\"\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":3000,\\\"toolAction\\\":\\\"Running CLI rendering verification in SW and EN\\\",\\\"toolSummary\\\":\\\"Execute test rendering in SW and EN\\\"}\", \"thinkingSignature\":\"EqIBCp8BAWkUfROJMtjBdNgNPn7wWYIewkl1rk5p/fTHNFoP1+cBbX17c6D/VpuLihgruKcXfnoBQGLdMHZ3KJtHZzwDPnKQHV6lcsZPzGpLzCnNKOsrF8yMYpdxgVXCoCa775FAS78HTOw2L/x4WSsf28PjG38DjkoAHbjNlcVRx+frY961VGABeQOZBJ7M0q8NBRcGYLdvTm3spQm9SumdHhNC\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => 'Standard input code'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/home/narnam/Downloads/eneo/web/index.php'
+    'PATH_TRANSLATED' => ''
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789811700.3711
+    'REQUEST_TIME' => 1789811700
+    'argv' => [
+        0 => 'Standard input code'
+    ]
+    'argc' => 1
+    'REQUEST_URI' => '/business/index'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+]
+2026-09-19 10:20:12 [][-][21670b64c0cd547db03994355dcb9b2b][warning][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'yii' does not exist: /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/messages/sw/yii.php
+2026-09-19 10:20:12 [][-][21670b64c0cd547db03994355dcb9b2b][error][yii\base\ErrorException:1] yii\base\ErrorException: Uncaught PDOException: SQLSTATE[HY000] [2002] No such file or directory in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php:721
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(721): PDO->__construct()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(636): yii\db\Connection->createPdoInstance()
+#2 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1066): yii\db\Connection->open()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1053): yii\db\Connection->getMasterPdo()
+#4 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#5 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(1181): yii\db\Command->prepare()
+#6 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(417): yii\db\Command->queryInternal()
+#7 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(370): yii\db\Command->queryAll()
+#8 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(138): yii\db\mysql\Schema->findColumns()
+#9 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(757): yii\db\mysql\Schema->loadTableSchema()
+#10 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(193): yii\db\Schema->getTableMetadata()
+#11 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/ActiveRecord.php(434): yii\db\Schema->getTableSchema()
+#12 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/ActiveRecord.php(468): yii\db\ActiveRecord::getTableSchema()
+#13 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/BaseActiveRecord.php(505): yii\db\ActiveRecord->attributes()
+#14 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\BaseActiveRecord->hasAttribute()
+#15 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseHtml.php(2296): yii\db\BaseActiveRecord->__get()
+#16 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseHtml.php(1862): yii\helpers\BaseHtml::getAttributeValue()
+#17 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseHtml.php(1703): yii\helpers\BaseHtml::activeListInput()
+#18 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/widgets/ActiveField.php(656): yii\helpers\BaseHtml::activeDropDownList()
+#19 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2-bootstrap5/src/ActiveField.php(460): yii\widgets\ActiveField->dropDownList()
+#20 /home/narnam/Downloads/eneo/views/property/index.php(65): yii\bootstrap5\ActiveField->dropDownList()
+#21 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(345): require('...')
+#22 [internal function]: yii\base\View->{closure:yii\base\View::renderPhpFile():343}()
+#23 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(350): call_user_func_array()
+#24 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile()
+#25 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile()
+#26 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Controller.php(423): yii\base\View->render()
+#27 Command line code(20): yii\base\Controller->render()
+#28 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php:647
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1066): yii\db\Connection->open()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php(1053): yii\db\Connection->getMasterPdo()
+#2 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(1181): yii\db\Command->prepare()
+#4 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Command.php(417): yii\db\Command->queryInternal()
+#5 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(370): yii\db\Command->queryAll()
+#6 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/mysql/Schema.php(138): yii\db\mysql\Schema->findColumns()
+#7 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(757): yii\db\mysql\Schema->loadTableSchema()
+#8 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Schema.php(193): yii\db\Schema->getTableMetadata()
+#9 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/ActiveRecord.php(434): yii\db\Schema->getTableSchema()
+#10 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/ActiveRecord.php(468): yii\db\ActiveRecord::getTableSchema()
+#11 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/BaseActiveRecord.php(505): yii\db\ActiveRecord->attributes()
+#12 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/BaseActiveRecord.php(288): yii\db\BaseActiveRecord->hasAttribute()
+#13 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseHtml.php(2296): yii\db\BaseActiveRecord->__get()
+#14 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseHtml.php(1862): yii\helpers\BaseHtml::getAttributeValue()
+#15 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/helpers/BaseHtml.php(1703): yii\helpers\BaseHtml::activeListInput()
+#16 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/widgets/ActiveField.php(656): yii\helpers\BaseHtml::activeDropDownList()
+#17 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2-bootstrap5/src/ActiveField.php(460): yii\widgets\ActiveField->dropDownList()
+#18 /home/narnam/Downloads/eneo/views/property/index.php(65): yii\bootstrap5\ActiveField->dropDownList()
+#19 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(345): require('...')
+#20 [internal function]: yii\base\View->{closure:yii\base\View::renderPhpFile():343}()
+#21 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(350): call_user_func_array()
+#22 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile()
+#23 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile()
+#24 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Controller.php(423): yii\base\View->render()
+#25 Command line code(20): yii\base\Controller->render()
+#26 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No such file or directory
+)
+
+  thrown in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/db/Connection.php:647
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2026-09-19 10:20:12 [][-][21670b64c0cd547db03994355dcb9b2b][error][yii\i18n\GettextMessageSource::loadMessages] The message file for category 'yii/bootstrap5' does not exist: /home/narnam/Downloads/eneo/vendor/yiisoft/yii2-bootstrap5/src/messages/sw/messages.mo
+2026-09-19 10:20:11 [][-][21670b64c0cd547db03994355dcb9b2b][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => '/usr/bin/php'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":380, \"toolCall\":{\"id\":\"call_590984\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"php -d session.save_path=/home/narnam/Downloads/eneo/runtime -r \\\\\\\"\\\\n\\\\\\\\$_SERVER[\'SCRIPT_FILENAME\'] = __DIR__ . \'/web/index.php\';\\\\n\\\\\\\\$_SERVER[\'SCRIPT_NAME\'] = \'/index.php\';\\\\n\\\\\\\\$_SERVER[\'REQUEST_URI\'] = \'/property/index\';\\\\n\\\\\\\\$_SERVER[\'SERVER_NAME\'] = \'localhost\';\\\\n\\\\\\\\$_SERVER[\'SERVER_PORT\'] = \'80\';\\\\n\\\\nrequire __DIR__ . \'/vendor/autoload.php\';\\\\nrequire __DIR__ . \'/vendor/yiisoft/yii2/Yii.php\';\\\\n\\\\\\\\$config = require __DIR__ . \'/config/web.php\';\\\\n\\\\\\\\$config[\'language\'] = \'sw\';\\\\nnew yii\\\\\\\\web\\\\\\\\Application(\\\\\\\\$config);\\\\n\\\\n\\\\\\\\$controller = new app\\\\\\\\controllers\\\\\\\\PropertyController(\'property\', Yii::\\\\\\\\$app);\\\\n\\\\\\\\$searchModel = new app\\\\\\\\models\\\\\\\\PropertySearch();\\\\n\\\\\\\\$dataProvider = new yii\\\\\\\\data\\\\\\\\ArrayDataProvider([\\\\n    \'allModels\' =\\\\u003e [],\\\\n]);\\\\n\\\\n\\\\\\\\$outputSw = \\\\\\\\$controller-\\\\u003erender(\'index\', [\\\\n    \'searchModel\' =\\\\u003e \\\\\\\\$searchModel,\\\\n    \'dataProvider\' =\\\\u003e \\\\\\\\$dataProvider,\\\\n]);\\\\n\\\\necho \\\\\\\\\\\\\\\"=== PROPERTY SW TEST ===\\\\\\\\n\\\\\\\\\\\\\\\";\\\\nif (strpos(\\\\\\\\$outputSw, \'Fremu za Biashara Moja kwa Moja Kutoka kwa Wamiliki\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found Kiswahili Fremu hero title!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing Kiswahili Fremu hero title!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nif (strpos(\\\\\\\\$outputSw, \'Chuja Fremu\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputSw, \'Fanya Uchambuzi wa Soko\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found filter and intelligence callout in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing filter or intelligence callout in SW!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nYii::\\\\\\\\$app-\\\\u003elanguage = \'en\';\\\\n\\\\\\\\$outputEn = \\\\\\\\$controller-\\\\u003erender(\'index\', [\\\\n    \'searchModel\' =\\\\u003e \\\\\\\\$searchModel,\\\\n    \'dataProvider\' =\\\\u003e \\\\\\\\$dataProvider,\\\\n]);\\\\n\\\\necho \\\\\\\\\\\\\\\"=== PROPERTY EN TEST ===\\\\\\\\n\\\\\\\\\\\\\\\";\\\\nif (strpos(\\\\\\\\$outputEn, \'Commercial Spaces Listed Directly by Owners\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found English hero title!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing English hero title!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\nif (strpos(\\\\\\\\$outputEn, \'Filter Spaces\') !== false \\\\u0026\\\\u0026 strpos(\\\\\\\\$outputEn, \'Run a Market Analysis\') !== false) {\\\\n    echo \\\\\\\\\\\\\\\"SUCCESS: Found filter and intelligence callout in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n} else {\\\\n    echo \\\\\\\\\\\\\\\"FAIL: Missing filter or intelligence callout in EN!\\\\\\\\n\\\\\\\\\\\\\\\";\\\\n}\\\\n\\\\\\\"\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":3000,\\\"toolAction\\\":\\\"Testing rendering of property marketplace in SW and EN\\\",\\\"toolSummary\\\":\\\"Execute CLI test rendering of property index\\\"}\", \"thinkingSignature\":\"EusBCugBAWkUfRPsMmsIgby893/vr6GxC+VtvtxHZnUjkb+t/L0NDEXzZbbxXJJrUonuLpqMDifpCeVk6fn5eXrM+feESNo+ITiNoyT7f98pR+r7YMfeL2YkMDCRN4st3RYVYN18L7mWx7GSBl1f43foy53e00l6JO79dVXNDpuScWwnvrNLY9z+F1kdch1hVeAsUjYA3nOPRHatx4R5ZJNaSzv7f8ZcYrzilsMhm8U1iQ++GiTqEHua5/lj2drQu50oe9MlvadhKdPKo1C2fo5jSseDnD0KIBC6Gblc9nqfDgc5PNdeTYK6eob6sw==\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => 'Standard input code'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/home/narnam/Downloads/eneo/web/index.php'
+    'PATH_TRANSLATED' => ''
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789813211.9733
+    'REQUEST_TIME' => 1789813211
+    'argv' => [
+        0 => 'Standard input code'
+    ]
+    'argc' => 1
+    'REQUEST_URI' => '/property/index'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+]
+2026-09-19 11:12:32 [-][-][-][error][yii\console\Exception] yii\console\Exception: Unknown option: --host. Options available: --color, --interactive, --help, --silentExitOnException, --docroot, --router, --port in /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Controller.php:178
+Stack trace:
+#0 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Module.php(547): yii\console\Controller->runAction()
+#1 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(180): yii\base\Module->runAction()
+#2 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/console/Application.php(147): yii\console\Application->runAction()
+#3 /home/narnam/Downloads/eneo/vendor/yiisoft/yii2/base/Application.php(382): yii\console\Application->handleRequest()
+#4 /home/narnam/Downloads/eneo/yii(20): yii\base\Application->run()
+#5 {main}
+2026-09-19 11:12:32 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'SHELL' => '/bin/bash'
+    'QT_ACCESSIBILITY' => '1'
+    'ANTIGRAVITY_LS_ADDRESS' => 'localhost:38757'
+    'COLORTERM' => 'truecolor'
+    'XDG_CONFIG_DIRS' => '/etc/xdg/xdg-ubuntu:/etc/xdg'
+    'XDG_MENU_PREFIX' => 'gnome-'
+    'GNOME_DESKTOP_SESSION_ID' => 'this-is-deprecated'
+    'QT_IM_MODULES' => 'wayland;ibus'
+    'GNOME_KEYRING_CONTROL' => '/run/user/1000/keyring'
+    'PTYXIS_PROFILE' => 'a9a003ab69cee0304bdfa4766a849764'
+    'SSH_AUTH_SOCK' => '/run/user/1000/gcr/ssh'
+    'NODE_EXTRA_CA_CERTS' => '/etc/ssl/certs/ca-certificates.crt'
+    'COPILOT_CLI_ENABLED_FEATURE_FLAGS' => 'SHELL_SPAWN_BACKEND'
+    'MEMORY_PRESSURE_WRITE' => 'c29tZSAyMDAwMDAgMjAwMDAwMAA='
+    'ELECTRON_RUN_AS_NODE' => '1'
+    'XMODIFIERS' => '@im=ibus'
+    'DESKTOP_SESSION' => 'ubuntu'
+    'NO_AT_BRIDGE' => '1'
+    'GTK_MODULES' => 'gail:atk-bridge'
+    'PWD' => '/home/narnam/Downloads/eneo'
+    'USERPROFILE' => '/home/narnam'
+    'XDG_SESSION_DESKTOP' => 'ubuntu'
+    'LOGNAME' => 'narnam'
+    'XDG_SESSION_TYPE' => 'wayland'
+    'COPILOT_OTEL_FILE_EXPORTER_PATH' => '/dev/null'
+    'VSCODE_ESM_ENTRYPOINT' => 'vs/workbench/api/node/extensionHostProcess'
+    'GPG_AGENT_INFO' => '/run/user/1000/gnupg/S.gpg-agent:0:1'
+    'SYSTEMD_EXEC_PID' => '5662'
+    'VSCODE_CODE_CACHE_PATH' => '/home/narnam/.config/Code/CachedData/a44adf7f53e00964ab890f9f8758a334f1fc15bc'
+    '_' => '/usr/bin/php'
+    'XAUTHORITY' => '/run/user/1000/.mutter-Xwaylandauth.DBULV3'
+    'HOME' => '/home/narnam'
+    'USERNAME' => 'narnam'
+    'LANG' => 'en_US.UTF-8'
+    'LS_COLORS' => 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:'
+    'XDG_CURRENT_DESKTOP' => 'ubuntu:GNOME'
+    'VSCODE_IPC_HOOK' => '/run/user/1000/vscode-26588ca5-1.13-main.sock'
+    'MEMORY_PRESSURE_WATCH' => '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure'
+    'VTE_VERSION' => '8400'
+    'WAYLAND_DISPLAY' => 'wayland-0'
+    'VSCODE_CLI' => '1'
+    'ANTIGRAVITY_AGENTAPI_EXE' => '/home/narnam/.gemini/bin/agy'
+    'ANTIGRAVITY_CSRF_TOKEN' => '8ebe4f9f-5430-4618-b758-e0bcc4a1044d'
+    'INVOCATION_ID' => '70b8bde27dde4e1f87eb885ca1eec115'
+    'MANAGERPID' => '4947'
+    'CHROME_DESKTOP' => 'code.desktop'
+    'GNOME_SETUP_DISPLAY' => 'unix:/tmp/.X11-unix/X1'
+    'ANTIGRAVITY_CONVERSATION_ID' => 'e3813c74-47e7-445f-a744-5405fcf7bd1b'
+    'LESSCLOSE' => '/usr/bin/lesspipe %s %s'
+    'XDG_SESSION_CLASS' => 'user'
+    'ELECTRON_ENABLE_LOGGING' => '1'
+    'TERM' => 'dumb'
+    'LESSOPEN' => '| /usr/bin/lesspipe %s'
+    'USER' => 'narnam'
+    'GIT_PAGER' => 'cat'
+    'ANTIGRAVITY_SOURCE_METADATA' => '{\"tool\":{\"conversationId\":\"e3813c74-47e7-445f-a744-5405fcf7bd1b\", \"stepIndex\":541, \"toolCall\":{\"id\":\"call_e5174fb1ab2a47d499f6c20e\", \"name\":\"run_command\", \"argumentsJson\":\"{\\\"CommandLine\\\":\\\"php yii serve --port=8080 --host=0.0.0.0\\\",\\\"Cwd\\\":\\\"/home/narnam/Downloads/eneo\\\",\\\"WaitMsBeforeAsync\\\":5000,\\\"toolAction\\\":\\\"Starting Yii server\\\",\\\"toolSummary\\\":\\\"Run Yii dev server with host\\\"}\"}}}'
+    'DISPLAY' => ':0'
+    'VSCODE_PID' => '12221'
+    'SHLVL' => '1'
+    'PAGER' => 'cat'
+    'QT_IM_MODULE' => 'ibus'
+    'VSCODE_CWD' => '/var/www/eneo'
+    'ANTIGRAVITY_AGENT' => '1'
+    'MANAGERPIDFDID' => '29266'
+    'FC_FONTATIONS' => '1'
+    'ANTIGRAVITY_TRAJECTORY_ID' => '5f7fa5ea-93ab-42b8-8ca5-a5ea791de75f'
+    'VSCODE_CRASH_REPORTER_PROCESS_TYPE' => 'extensionHost'
+    'XDG_RUNTIME_DIR' => '/run/user/1000'
+    'SSL_CERT_FILE' => '/etc/ssl/certs/ca-certificates.crt'
+    'DEBUGINFOD_URLS' => 'https://debuginfod.ubuntu.com '
+    'IM_CONFIG_ENTRY' => 'profile'
+    'ANTIGRAVITY_LS_VERSION' => 'cli-2.15.0'
+    'ELECTRON_NO_ATTACH_CONSOLE' => '1'
+    'ANTIGRAVITY_PROJECT_ID' => 'b010144b-84ec-452a-b7ca-769ec44b5197'
+    'JOURNAL_STREAM' => '10:39086'
+    'XDG_DATA_DIRS' => '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'
+    'GDK_BACKEND' => 'wayland'
+    'PATH' => '/home/narnam/.gemini/antigravity/bin:/home/narnam/.opencode/bin:/home/narnam/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'
+    'AGY_ENABLE_HUB' => '1'
+    'GDMSESSION' => 'ubuntu'
+    'XDG_SESSION_EXTRA_DEVICE_ACCESS' => 'render:accel'
+    'ANTIGRAVITY_VSCODE_HOST' => '1'
+    'APPLICATION_INSIGHTS_NO_STATSBEAT' => 'true'
+    'DBUS_SESSION_BUS_ADDRESS' => 'unix:path=/run/user/1000/bus'
+    'VSCODE_NLS_CONFIG' => '{\"userLocale\":\"en-us\",\"osLocale\":\"en-us\",\"resolvedLanguage\":\"en\",\"defaultMessagesFile\":\"/usr/share/code/resources/app/out/nls.messages.json\",\"locale\":\"en-us\",\"availableLanguages\":{}}'
+    'PTYXIS_VERSION' => '50.1'
+    'ANTIGRAVITY_APP_DATA_DIR' => '/home/narnam/.gemini/antigravity'
+    'GIO_LAUNCHED_DESKTOP_FILE_PID' => '10403'
+    'FLATPAK_TTY_PROGRESS' => '1'
+    'MXC_BIN_DIR' => '/usr/share/code/resources/app/node_modules.asar.unpacked/@microsoft/mxc-sdk/bin'
+    'VSCODE_HANDLES_UNCAUGHT_ERRORS' => 'true'
+    'ANTIGRAVITY_AUTH_SUCCESS_APP' => 'vscode'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1789816352.3388
+    'REQUEST_TIME' => 1789816352
+    'argv' => [
+        0 => 'yii'
+        1 => 'serve'
+        2 => '--port=8080'
+        3 => '--host=0.0.0.0'
+    ]
+    'argc' => 4
+]

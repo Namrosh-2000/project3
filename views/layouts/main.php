@@ -38,94 +38,102 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <header id="header">
     <?php
     NavBar::begin([
-        'brandLabel' => '<i class="bi bi-geo-alt-fill"></i> MachoMtaa',
+        'brandLabel' => '<i class="bi bi-geo-alt-fill text-warning"></i> MachoMtaa',
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => ['class' => 'navbar-expand-lg navbar-light el-navbar'],
+        'options' => ['class' => 'navbar-expand-lg navbar-light el-navbar shadow-sm'],
     ]);
 
-    $navItems = [
+    // 1. Primary navigation tabs: Nyumbani, Fursa, Fremu Soko
+    $navLeftItems = [
         ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
         ['label' => Yii::t('app', 'Opportunities'), 'url' => ['/business/index']],
         ['label' => Yii::t('app', 'Marketplace'), 'url' => ['/property/index']],
     ];
 
-    if (!Yii::$app->user->isGuest) {
-        $identity = Yii::$app->user->identity;
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav me-auto mb-2 mb-lg-0 mm-main-nav'],
+        'items' => $navLeftItems,
+    ]);
 
-        if ($identity->role === User::ROLE_ADMIN) {
-            $navItems[] = ['label' => '📅 Bookings', 'url' => ['/admin/bookings']];
-        } elseif (in_array($identity->role, [User::ROLE_OWNER, User::ROLE_AGENT], true)) {
-            $pendingOwnerBookings = Booking::find()->where(['owner_id' => $identity->id, 'status' => Booking::STATUS_PENDING])->count();
-            $bLabel = '📅 Bookings';
-            if ($pendingOwnerBookings > 0) {
-                $bLabel .= ' <span class="badge bg-warning text-dark">' . $pendingOwnerBookings . '</span>';
-            }
-            $navItems[] = ['label' => $bLabel, 'url' => ['/booking/owner'], 'encode' => false];
-        } else {
-            $navItems[] = ['label' => '📅 My Bookings', 'url' => ['/booking/index']];
-        }
+    // 2. Right side controls: Badili Lugha, Auth / User menu, and Fungua Dashibodi Yako
+    $navRightItems = [];
 
-        $myItems = [
-            ['label' => '🏠 ' . Yii::t('app', 'Open Your Dashboard'), 'url' => $identity->getDashboardRoute()],
-            ['label' => '📅 My Bookings', 'url' => ['/booking/index']],
-            ['label' => 'Favorites', 'url' => ['/account/favorites']],
-            ['label' => 'Inquiries', 'url' => ['/account/inquiries']],
-        ];
-        if (in_array($identity->role, [User::ROLE_OWNER, User::ROLE_AGENT], true)) {
-            $pendingOwnerBookings = Booking::find()->where(['owner_id' => $identity->id, 'status' => Booking::STATUS_PENDING])->count();
-            $ownerBookingsLabel = '📥 Received Bookings';
-            if ($pendingOwnerBookings > 0) {
-                $ownerBookingsLabel .= ' <span class="badge bg-warning text-dark">' . $pendingOwnerBookings . '</span>';
-            }
-            $myItems[] = ['label' => $ownerBookingsLabel, 'url' => ['/booking/owner'], 'encode' => false];
-            $myItems[] = ['label' => 'My Listings', 'url' => ['/account/listings']];
-            $myItems[] = ['label' => '+ Add Property', 'url' => ['/property-submission/create']];
-        }
-        if ($identity->role === User::ROLE_ADMIN) {
-            $pendingCount = Property::find()->where(['status' => Property::STATUS_PENDING])->count();
-            $adminLabel = 'Admin';
-            if ($pendingCount > 0) {
-                $adminLabel .= ' <span class="el-nav-badge">' . $pendingCount . '</span>';
-            }
-            $myItems[] = ['label' => $adminLabel, 'url' => ['/admin/index'], 'encode' => false];
-            $myItems[] = ['label' => 'Manage System Bookings', 'url' => ['/admin/bookings']];
-        }
-        $navItems[] = ['label' => 'My Account', 'items' => $myItems];
-        $navItems[] = ['label' => '👤 ' . Yii::$app->user->identity->username, 'items' => [
-            ['label' => 'Profile', 'url' => ['/profile/index']],
-            ['label' => 'Account Settings', 'url' => ['/profile/settings']],
-            ['label' => '---'],
-        ]];
-    }
-
-    // Kiswahili/English switcher — choice is remembered in a cookie
-    // (SiteController::actionSetLanguage); default is Kiswahili.
+    // Language switcher dropdown (Kiswahili default / English optional)
     $currentLang = Yii::$app->language;
-    $navItems[] = '<li class="nav-item"><span class="mm-lang-switch">'
-        . Html::a('SW', ['/site/set-language', 'code' => 'sw'], ['class' => $currentLang === 'sw' ? 'active' : ''])
-        . '<span>/</span>'
-        . Html::a('EN', ['/site/set-language', 'code' => 'en'], ['class' => $currentLang === 'en' ? 'active' : ''])
-        . '</span></li>';
+    $navRightItems[] = [
+        'label' => '🌐 ' . Yii::t('app', 'Change Language'),
+        'items' => [
+            [
+                'label' => Yii::t('app', 'Kiswahili') . ($currentLang === 'sw' ? '  ✓' : ''),
+                'url' => ['/site/set-language', 'code' => 'sw'],
+                'linkOptions' => ['class' => $currentLang === 'sw' ? 'fw-bold active' : ''],
+            ],
+            [
+                'label' => Yii::t('app', 'English') . ($currentLang === 'en' ? '  ✓' : ''),
+                'url' => ['/site/set-language', 'code' => 'en'],
+                'linkOptions' => ['class' => $currentLang === 'en' ? 'fw-bold active' : ''],
+            ],
+        ],
+        'options' => ['class' => 'mm-lang-item'],
+    ];
 
     if (Yii::$app->user->isGuest) {
-        $navItems[] = ['label' => Yii::t('app', 'Sign Up'), 'url' => ['/site/signup']];
-        $navItems[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
-        $navItems[] = ['label' => Yii::t('app', 'Open Your Dashboard'), 'url' => ['/site/login'], 'linkOptions' => ['class' => 'mm-nav-cta']];
+        $navRightItems[] = ['label' => Yii::t('app', 'Sign Up'), 'url' => ['/site/signup']];
+        $navRightItems[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
+        $navRightItems[] = [
+            'label' => Yii::t('app', 'Open Your Dashboard'),
+            'url' => ['/site/login'],
+            'linkOptions' => ['class' => 'btn mm-nav-cta ms-lg-2'],
+        ];
     } else {
-        $navItems[] = ['label' => Yii::t('app', 'Open Your Dashboard'), 'url' => $identity->getDashboardRoute(), 'linkOptions' => ['class' => 'mm-nav-cta']];
-        $navItems[] = '<li class="nav-item">'
-            . Html::beginForm(['/site/logout'], 'post', ['class' => 'd-inline'])
+        $identity = Yii::$app->user->identity;
+
+        $userSubItems = [
+            ['label' => '🏠 ' . Yii::t('app', 'Dashboard'), 'url' => $identity->getDashboardRoute()],
+            ['label' => '👤 ' . Yii::t('app', 'Profile'), 'url' => ['/profile/index']],
+            ['label' => '⚙️ ' . Yii::t('app', 'Settings'), 'url' => ['/profile/settings']],
+        ];
+
+        if (in_array($identity->role, [User::ROLE_OWNER, User::ROLE_AGENT], true)) {
+            $userSubItems[] = '<div class="dropdown-divider"></div>';
+            $userSubItems[] = ['label' => '📋 ' . Yii::t('app', 'My Listings'), 'url' => ['/account/listings']];
+            $userSubItems[] = ['label' => '➕ ' . Yii::t('app', 'Add Listing'), 'url' => ['/property-submission/create']];
+            $userSubItems[] = ['label' => '📅 ' . Yii::t('app', 'Booking'), 'url' => ['/booking/owner']];
+        } else {
+            $userSubItems[] = '<div class="dropdown-divider"></div>';
+            $userSubItems[] = ['label' => '❤️ ' . Yii::t('app', 'Save'), 'url' => ['/account/favorites']];
+            $userSubItems[] = ['label' => '📅 ' . Yii::t('app', 'Booking'), 'url' => ['/booking/index']];
+            $userSubItems[] = ['label' => '📊 ' . Yii::t('app', 'Analysis'), 'url' => ['/business/history']];
+        }
+
+        if ($identity->role === User::ROLE_ADMIN) {
+            $userSubItems[] = '<div class="dropdown-divider"></div>';
+            $userSubItems[] = ['label' => '🛡️ Admin Panel', 'url' => ['/admin/index']];
+        }
+
+        $userSubItems[] = '<div class="dropdown-divider"></div>';
+        $userSubItems[] = '<li>' . Html::beginForm(['/site/logout'], 'post', ['class' => 'px-3 py-1'])
             . Html::submitButton(
-                Yii::t('app', 'Logout') . ' (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'nav-link btn btn-link logout']
+                '<i class="bi bi-box-arrow-right"></i> ' . Yii::t('app', 'Logout'),
+                ['class' => 'btn btn-sm btn-outline-danger w-100 text-start']
             )
-            . Html::endForm()
-            . '</li>';
+            . Html::endForm() . '</li>';
+
+        $navRightItems[] = [
+            'label' => '👤 ' . Html::encode($identity->username),
+            'items' => $userSubItems,
+        ];
+
+        $navRightItems[] = [
+            'label' => Yii::t('app', 'Open Your Dashboard'),
+            'url' => $identity->getDashboardRoute(),
+            'linkOptions' => ['class' => 'btn mm-nav-cta ms-lg-2'],
+        ];
     }
 
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav ms-auto'],
-        'items' => $navItems,
+        'options' => ['class' => 'navbar-nav ms-auto align-items-lg-center'],
+        'items' => $navRightItems,
     ]);
     NavBar::end();
     ?>

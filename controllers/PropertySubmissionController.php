@@ -83,8 +83,8 @@ class PropertySubmissionController extends Controller
 
             if ($model->load($post) && $model->save()) {
                 $this->handleImages($model);
-                Yii::$app->session->setFlash('success', 'Property yako imewasilishwa. Subiri uthibitisho wa admin.');
-                return $this->redirect(['/my/listings']);
+                Yii::$app->session->setFlash('success', Yii::t('app', 'submission.success_create'));
+                return $this->redirect(['/account/listings']);
             } else {
                 Yii::error('Property save failed: ' . print_r($model->getErrors(), true), __METHOD__);
             }
@@ -100,22 +100,55 @@ class PropertySubmissionController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $categories = PropertyCategory::find()
+            ->where(['is_active' => true])
+            ->orderBy(['type' => SORT_ASC, 'name' => SORT_ASC])
+            ->all();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $this->handleImages($model);
-            Yii::$app->session->setFlash('success', 'Property imesasishwa.');
-            return $this->redirect(['/my/listings']);
+        $wards = Location::find()
+            ->select(['ward'])
+            ->distinct()
+            ->orderBy(['ward' => SORT_ASC])
+            ->column();
+
+        if (Yii::$app->request->isPost) {
+            $post = Yii::$app->request->post();
+            $wardName = trim($post['Property']['ward'] ?? '');
+
+            if ($wardName !== '') {
+                $location = Location::find()->where(['ward' => $wardName])->one();
+                if ($location === null) {
+                    $location = new Location();
+                    $location->region = 'Dar es Salaam';
+                    $location->municipality = 'Kinondoni';
+                    $location->ward = $wardName;
+                    $location->save();
+                }
+                if ($location) {
+                    $model->location_id = $location->id;
+                }
+            }
+
+            if ($model->load($post) && $model->save()) {
+                $this->handleImages($model);
+                Yii::$app->session->setFlash('success', Yii::t('app', 'submission.success_update'));
+                return $this->redirect(['/account/listings']);
+            }
         }
 
-        return $this->render('update', ['model' => $model]);
+        return $this->render('update', [
+            'model' => $model,
+            'categories' => $categories,
+            'wards' => $wards,
+        ]);
     }
 
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
         $model->delete();
-        Yii::$app->session->setFlash('success', 'Property imefutwa.');
-        return $this->redirect(['/my/listings']);
+        Yii::$app->session->setFlash('success', Yii::t('app', 'submission.success_delete'));
+        return $this->redirect(['/account/listings']);
     }
 
     protected function findModel($id)

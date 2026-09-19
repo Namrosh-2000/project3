@@ -187,6 +187,14 @@ $this->title = 'Admin Dashboard';
                         <i class="bi bi-chevron-right fs-5"></i>
                     </a>
 
+                    <a href="<?= Yii::$app->homeUrl ?>admin/local-data" class="btn btn-outline-teal p-3 text-start d-flex justify-content-between align-items-center" style="background: rgba(14,110,92,0.06); border: 1px solid var(--el-teal); color: var(--el-ink);">
+                        <div>
+                            <strong class="d-block text-teal"><i class="bi bi-database-fill-gear me-1"></i> Local Data Engine (Phase 4)</strong>
+                            <small class="text-muted">Manage ward indicators, foot traffic, and data sources</small>
+                        </div>
+                        <i class="bi bi-chevron-right fs-5 text-teal"></i>
+                    </a>
+
                     <a href="<?= Yii::$app->homeUrl ?>admin/users" class="btn btn-outline-dark p-3 text-start d-flex justify-content-between align-items-center">
                         <div>
                             <strong class="d-block"><i class="bi bi-people me-1"></i> User Directory</strong>

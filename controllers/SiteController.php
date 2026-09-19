@@ -84,15 +84,19 @@ class SiteController extends Controller
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect(Yii::$app->user->identity->getDashboardRoute());
+        }
+
+        $returnUrl = Yii::$app->request->get('returnUrl');
+        if ($returnUrl) {
+            Yii::$app->user->setReturnUrl($returnUrl);
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            Yii::$app->session->setFlash('success', 'Karibu tena, ' . Yii::$app->user->identity->username . '!');
-            // goBack() honors a returnUrl set when AccessControl redirected the
-            // user here from a protected page; otherwise it falls back to the
-            // dashboard that matches their role.
+            Yii::$app->session->setFlash('success', Yii::t('app', 'auth.welcome_back', ['username' => Yii::$app->user->identity->username]));
+            // goBack() honors returnUrl set when user came from a protected page/link,
+            // otherwise routes to the role dashboard.
             return $this->goBack(Yii::$app->user->identity->getDashboardRoute());
         }
 
@@ -110,11 +114,20 @@ class SiteController extends Controller
 
     public function actionSignup()
     {
+        if (!Yii::$app->user->isGuest) {
+            return $this->redirect(Yii::$app->user->identity->getDashboardRoute());
+        }
+
+        $returnUrl = Yii::$app->request->get('returnUrl');
+        if ($returnUrl) {
+            Yii::$app->user->setReturnUrl($returnUrl);
+        }
+
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && ($user = $model->signup())) {
             Yii::$app->user->login($user, 0);
-            Yii::$app->session->setFlash('success', 'Akaunti yako imeundwa. Karibu MachoMtaa!');
-            return $this->redirect($user->getDashboardRoute());
+            Yii::$app->session->setFlash('success', Yii::t('app', 'auth.signup_success'));
+            return $this->goBack($user->getDashboardRoute());
         }
 
         return $this->render('signup', [
@@ -147,12 +160,16 @@ class SiteController extends Controller
      */
     public function actionSetLanguage($code)
     {
-        Yii::$app->response->cookies->add(new \yii\web\Cookie([
-            'name' => 'machomtaa_lang',
-            'value' => $code,
-            'expire' => time() + 3600 * 24 * 365,
-        ]));
+        if (in_array($code, ['sw', 'en'], true)) {
+            Yii::$app->response->cookies->add(new \yii\web\Cookie([
+                'name' => 'machomtaa_lang',
+                'value' => $code,
+                'expire' => time() + 3600 * 24 * 365,
+                'httpOnly' => false,
+            ]));
+            Yii::$app->language = $code;
+        }
 
-        return $this->goBack();
+        return $this->redirect(Yii::$app->request->referrer ?: Yii::$app->homeUrl);
     }
 }
